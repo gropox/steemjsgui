@@ -29,7 +29,7 @@ class Header extends Component {
     
     return (
     <div className="Header-body">
-        <div className="Header-about">Steem-js GUI</div>
+        <div className="Header-about">Steem-js GUI, created by @ropox</div>
         <div className="Header-selector">
             <label>Steemit: <input type="radio" name="blockchain" onChange={this.onChange} value={SteemApi.Blockchain.STEEMIT} checked={this.state.blockchain == SteemApi.Blockchain.STEEMIT} /></label>
             <label>Golos: <input type="radio" name="blockchain" onChange={this.onChange} value={SteemApi.Blockchain.GOLOS} checked={this.state.blockchain == SteemApi.Blockchain.GOLOS} /></label>

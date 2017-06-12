@@ -8,7 +8,7 @@ class ApiMethods extends Component {
   }  
     
     getTarget(api, method) {
-        return "/api/"+api + "/" + method;
+        return "/steemjs/api/"+api + "/" + method;
     }
     
   render() {
