@@ -1,0 +1,15 @@
+{
+    "database_api": {
+        "get_accounts": {
+            "names" : {
+                "type" : "Array"
+            }
+        },
+        "get_block": {
+            "blockNum" : {
+                "type" : "Integer"
+            }
+        }
+    }
+}
+                
