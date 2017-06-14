@@ -1,15 +1,2196 @@
 {
     "database_api": {
-        "get_accounts": {
-            "names" : {
-                "type" : "Array"
+        "set_subscribe_callback": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "callback": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "clearFilter": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "set_pending_transaction_callback": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "cb": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "set_block_applied_callback": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "cb": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "cancel_all_subscriptions": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            }
+        },
+        "get_trending_tags": {
+            "desc": {
+                "en": "Returns a list of tags (tags) that include word combinations",
+                "ru": "Возращает список меток(тэгов) включающие словосочетания",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "afterTag": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "limit": {
+                    "type": "Integer",
+                    "desc": {
+                        "en": "limit number (not more than 1000)",
+                        "ru": "предельное колличество (не более 1000)",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_tags_used_by_author": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "author": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_post_discussions_by_payout": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "query": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_comment_discussions_by_payout": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "query": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_discussions_by_trending": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "query": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_discussions_by_trending30": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "query": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_discussions_by_created": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "query": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_discussions_by_active": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "query": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_discussions_by_cashout": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "query": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_discussions_by_payout": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "query": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_discussions_by_votes": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "query": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_discussions_by_children": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "query": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_discussions_by_hot": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "query": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_discussions_by_feed": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "query": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_discussions_by_blog": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "query": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_discussions_by_comments": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "query": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_discussions_by_promoted": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "query": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_block_header": {
+            "desc": {
+                "en": "Returns block for given number",
+                "ru": "Возвращает все данные о блоке",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "blockNum": {
+                    "type": "Integer",
+                    "desc": {
+                        "en": "block number",
+                        "ru": "номер блока",
+                        "de": "",
+                        "es": ""
+                    }
+                }
             }
         },
         "get_block": {
-            "blockNum" : {
-                "type" : "Integer"
+            "desc": {
+                "en": "Returns block for given number",
+                "ru": "Возвращает все данные о блоке включая транзакции",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "blockNum": {
+                    "type": "Integer",
+                    "desc": {
+                        "en": "block number",
+                        "ru": "номер блока",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_ops_in_block": {
+            "desc": {
+                "en": "Returns all operations in the block, if the parameter 'onlyVirtual' is true, then returns only the virtual operations",
+                "ru": "Возвращает все операции в блоке, если параметр 'onlyVirtual' true то возвращает только виртуальные операции",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "blockNum": {
+                    "type": "Integer",
+                    "desc": {
+                        "en": "block number",
+                        "ru": "номер блока",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "onlyVirtual": {
+                    "type": "Boolean",
+                    "desc": {
+                        "en": "show only virtual operations",
+                        "ru": "показывать только виртуальные операции",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_state": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "path": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_trending_categories": {
+            "desc": {
+                "en": "Returns sorted by value tags starting with a given or similar to it.",
+                "ru": "Возвращает отсортированные по стоимости тэги начиная с заданного или близко к нему похожего.",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "after": {
+                    "type": "String",
+                    "desc": {
+                        "en": "phrase for search, may be empty",
+                        "ru": "словосочетание для поиска",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "limit": {
+                    "type": "Integer",
+                    "desc": {
+                        "en": "limit number (not more than 1000)",
+                        "ru": "предельное колличество (не более 1000)",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_best_categories": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "after": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "limit": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_active_categories": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "after": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "limit": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_recent_categories": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "after": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "limit": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_config": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            }
+        },
+        "get_dynamic_global_properties": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            }
+        },
+        "get_chain_properties": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            }
+        },
+        "get_feed_history": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            }
+        },
+        "get_current_median_history_price": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            }
+        },
+        "get_witness_schedule": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            }
+        },
+        "get_hardfork_version": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            }
+        },
+        "get_next_scheduled_hardfork": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            }
+        },
+        "get_accounts": {
+            "desc": {
+                "en": "Returns data for specified accounts",
+                "ru": "Возращает данные по заданным аккаунтам",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "names": {
+                    "type": "Array",
+                    "desc": {
+                        "en": "accounts(strings) in nested array",
+                        "ru": "имена аккаунтов (строки) в виде массива",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_account_references": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "accountId": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "lookup_account_names": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "accountNames": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "lookup_accounts": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "lowerBoundName": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "limit": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_account_count": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            }
+        },
+        "get_conversion_requests": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "accountName": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_account_history": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "account": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "from": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "limit": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_owner_history": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "account": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_recovery_request": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "account": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_escrow": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "from": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "escrowId": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_withdraw_routes": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "account": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "withdrawRouteType": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_account_bandwidth": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "account": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "bandwidthType": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_savings_withdraw_from": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "account": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_savings_withdraw_to": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "account": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_order_book": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "limit": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_open_orders": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "owner": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_liquidity_queue": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "startAccount": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "limit": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_transaction_hex": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "trx": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_transaction": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "trxId": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_required_signatures": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "trx": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "availableKeys": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_potential_signatures": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "trx": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "verify_authority": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "trx": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "verify_account_authority": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "nameOrId": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "signers": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_active_votes": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "author": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "permlink": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_account_votes": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "voter": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_content": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "author": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "permlink": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_content_replies": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "parent": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "parentPermlink": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_discussions_by_author_before_date": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "author": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "startPermlink": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "beforeDate": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "limit": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_replies_by_last_update": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "startAuthor": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "startPermlink": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "limit": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_witnesses": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "witnessIds": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_witness_by_account": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "accountName": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_witnesses_by_vote": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "from": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "limit": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "lookup_witness_accounts": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "lowerBoundName": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "limit": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_witness_count": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            }
+        },
+        "get_active_witnesses": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            }
+        },
+        "get_miner_queue": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            }
+        },
+        "get_reward_fund": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "name": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_vesting_delegations": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "account": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "from": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "limit": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        }
+    },
+    "account_by_key_api": {
+        "get_key_references": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "key": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        }
+    },
+    "login_api": {
+        "login": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "username": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "password": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_api_by_name": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "apiName": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_version": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            }
+        }
+    },
+    "follow_api": {
+        "get_followers": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "following": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "startFollower": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "followType": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "limit": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_following": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "follower": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "startFollowing": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "followType": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "limit": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_follow_count": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "account": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_feed_entries": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "account": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "entryId": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "limit": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_feed": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "account": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "entryId": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "limit": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_blog_entries": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "account": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "entryId": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "limit": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_blog": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "account": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "entryId": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "limit": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_account_reputations": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "lowerBoundName": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "limit": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_reblogged_by": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "author": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "permlink": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_blog_authors": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "blogAccount": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        }
+    },
+    "network_broadcast_api": {
+        "broadcast_transaction": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "trx": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "broadcast_transaction_with_callback": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "confirmationCallback": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "trx": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "broadcast_transaction_synchronous": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "trx": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "broadcast_block": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "b": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "set_max_block_age": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "maxBlockAge": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        }
+    },
+    "market_history_api": {
+        "get_ticker": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            }
+        },
+        "get_volume": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            }
+        },
+        "get_order_book": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "limit": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_trade_history": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "start": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "end": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "limit": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_recent_trades": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "limit": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_market_history": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "bucket_seconds": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "start": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "end": {
+                    "type": "String",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_market_history_buckets": {
+            "desc": {
+                "en": "",
+                "ru": "",
+                "de": "",
+                "es": ""
             }
         }
     }
 }
-                

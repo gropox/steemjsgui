@@ -9,12 +9,24 @@ class Param {
         this.api = api;
         this.method = method;
         this.name = name;
+
+        this.type = "String";
+        this.desc = {en : "", ru : "", de : "", es : ""};
         
-        if(types[api] && types[api][method] && types[api][method][name]) {
-            this.type = types[api][method][name].type;
-        } else {
-            this.type = "String";
-        }
+        if(types[api] 
+            && types[api][method] 
+            && types[api][method].params 
+            && types[api][method].params[name]) {
+            let meta = types[api][method].params[name];
+            if(meta.type) {
+                this.type = meta.type;
+            }
+            if(meta.desc) {
+                for(let tr of Object.keys(meta.desc)) {
+                    this.desc[tr] = meta.desc[tr];
+                }
+            }
+        } 
     }
 }
 
@@ -29,6 +41,14 @@ class Method {
             this.params = {};
             for(let p of params) {
                 this.params[p] = new Param(api, name, p);
+            }
+        }
+        this.desc = {en : "", ru : "", de : "", es : ""};
+        if(types[api] 
+            && types[api][name] 
+            && types[api][name].desc) {
+            for(let tr of Object.keys(types[api][name].desc)) {
+                this.desc[tr] = types[api][name].desc[tr];
             }
         }
     }
@@ -57,6 +77,37 @@ class SteemApi {
             }
             this.methods[m.api][m.method] = new Method(m.api, m.method, m.params);
         }
+    }
+    
+    dump() {
+        let dump = {};
+        for(let api of Object.keys(this.methods)) {
+            if(!dump[api]) {
+                dump[api] = {};
+            }
+            for(let mname of Object.keys(this.methods[api])) {
+                let m = this.methods[api][mname];
+                let mdump = {desc :  {en : "", ru : "", de : "", es : ""}};
+                if(m.params) {
+                    mdump.params = {};
+                    for(let pname of Object.keys(m.params)) {
+                        let p = m.params[pname];
+                        mdump.params[p.name] = {
+                            type : p.type,
+                            desc : {en : "", ru : "", de : "", es : ""}
+                        }
+                        for(let tr of Object.keys(p.desc)) {
+                            mdump.params[p.name].desc[tr] = p.desc[tr];
+                        }
+                    }
+                    for(let tr of Object.keys(m.desc)) {
+                        mdump.desc[tr] = m.desc[tr];
+                    }
+                }
+                dump[m.api][m.name] = mdump;
+            }
+        }
+        console.log(JSON.stringify(dump, null, 4));
     }
 }
 

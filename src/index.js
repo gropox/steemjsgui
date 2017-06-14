@@ -9,12 +9,12 @@ import './index.css';
 import { Router, Route, BrowserRouter } from 'react-router-dom'
 
 ReactDOM.render(
-  <BrowserRouter>
+  <BrowserRouter basename={'steemjs'}>
   <div>
-      <Route exact path="/steemjs/" component={Api} />
-      <Route exact path="/steemjs/api" component={Api}/>
-      <Route path="/steemjs/api/:api_name/:method_name" component={Method}/>
-      <Route exact path="/steemjs/broadcast" component={Broadcast}/>
+      <Route exact path="/" component={Api} />
+      <Route exact path="/api" component={Api}/>
+      <Route path="/api/:api_name/:method_name" component={Method}/>
+      <Route exact path="/broadcast" component={Broadcast}/>
   </div>
   </BrowserRouter>,
   document.getElementById('root')

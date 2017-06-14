@@ -77,13 +77,14 @@ class ApiMethod extends Component {
   render() {
     let methodName = this.props.match.params.method_name;
     let apiName = this.props.match.params.api_name;
+    let method = this.steemapi.methods[apiName][methodName];
     
     let result = "";
     if(this.state.result) {
         result = <JSONPretty id="json-pretty" json={this.state.result}></JSONPretty>;
     }
 
-    if(!this.state.result && !this.steemapi.methods[apiName][methodName].params) {
+    if(!this.state.result && !method.params) {
         this.onExecute();
     }
     
@@ -96,9 +97,13 @@ class ApiMethod extends Component {
 
             <div className="ApiMethod-header">
                 <h2>{methodName}</h2>
+                <div className="Method-desc">
+                    {this.steemapi.methods[apiName][methodName].desc.ru}
+                </div>
             </div>
             <div className="ApiMethod-params">
-                <ApiMethodParameters method = {this.steemapi.methods[apiName][methodName]} onChange={this.onChange} />
+                <h4>Parameters:</h4>
+                <ApiMethodParameters method = {method} onChange={this.onChange} />
             </div>
             <div>
                 <input type="submit" value="Execute" />

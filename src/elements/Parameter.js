@@ -19,12 +19,12 @@ class Parameter extends Component {
     console.log(param.type);
     if(param.type == "Array") {
         input = [0,1,2,3,4].map((pIdx) =>
-            <div><input type="text" name={param.name + "_" + pIdx} onChange={this.props.onChange} /></div>
+            <div ><input type="text" name={param.name + "_" + pIdx} onChange={this.props.onChange} /></div>
         );
     }    
     return (
     <div>
-        <label>
+        <label title={param.desc.ru}>
         {param.name}:&nbsp;
             {input}
         </label>
