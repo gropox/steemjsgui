@@ -18,7 +18,7 @@
                     }
                 },
                 "clearFilter": {
-                    "type": "String",
+                    "type": "Boolean",
                     "desc": {
                         "en": "",
                         "ru": "",
@@ -85,8 +85,8 @@
                 "afterTag": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "word combinations",
+                        "ru": "словосочетания",
                         "de": "",
                         "es": ""
                     }
@@ -94,8 +94,8 @@
                 "limit": {
                     "type": "Integer",
                     "desc": {
-                        "en": "limit number (not more than 1000)",
-                        "ru": "предельное колличество (не более 1000)",
+                        "en": "number of results",
+                        "ru": "количество результатов",
                         "de": "",
                         "es": ""
                     }
@@ -113,46 +113,8 @@
                 "author": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
-                        "de": "",
-                        "es": ""
-                    }
-                }
-            }
-        },
-        "get_post_discussions_by_payout": {
-            "desc": {
-                "en": "",
-                "ru": "",
-                "de": "",
-                "es": ""
-            },
-            "params": {
-                "query": {
-                    "type": "String",
-                    "desc": {
-                        "en": "",
-                        "ru": "",
-                        "de": "",
-                        "es": ""
-                    }
-                }
-            }
-        },
-        "get_comment_discussions_by_payout": {
-            "desc": {
-                "en": "",
-                "ru": "",
-                "de": "",
-                "es": ""
-            },
-            "params": {
-                "query": {
-                    "type": "String",
-                    "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "username",
+                        "ru": "имя пользователя",
                         "de": "",
                         "es": ""
                     }
@@ -161,14 +123,14 @@
         },
         "get_discussions_by_trending": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays a limited number of publications beginning with the most expensive of the award.",
+                "ru": " Отображает ограниченное количество публикаций начиная с самой дорогой по вознаграждению.",
                 "de": "",
                 "es": ""
             },
             "params": {
                 "query": {
-                    "type": "String",
+                    "type": "Object",
                     "desc": {
                         "en": "",
                         "ru": "",
@@ -180,14 +142,14 @@
         },
         "get_discussions_by_trending30": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays a limited number of publications on remuneration",
+                "ru": "Отображает ограниченное количество публикаций по вознаграждению",
                 "de": "",
                 "es": ""
             },
             "params": {
                 "query": {
-                    "type": "String",
+                    "type": "Object",
                     "desc": {
                         "en": "",
                         "ru": "",
@@ -199,14 +161,14 @@
         },
         "get_discussions_by_created": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays a limited number of publications, starting with the newest one.",
+                "ru": "Отображает ограниченное количество публикаций начиная с самой новой.",
                 "de": "",
                 "es": ""
             },
             "params": {
                 "query": {
-                    "type": "String",
+                    "type": "Object",
                     "desc": {
                         "en": "",
                         "ru": "",
@@ -218,14 +180,14 @@
         },
         "get_discussions_by_active": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays a limited number of entries in which there was activity since the newest.",
+                "ru": "Отображает ограниченное количество записей в которых была активность начиная с самой новой.",
                 "de": "",
                 "es": ""
             },
             "params": {
                 "query": {
-                    "type": "String",
+                    "type": "Object",
                     "desc": {
                         "en": "",
                         "ru": "",
@@ -237,14 +199,14 @@
         },
         "get_discussions_by_cashout": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays a limited number of publications, sorted by the time of payments",
+                "ru": "Отображает ограниченное количество публикаций, отсортированных по времени выплат",
                 "de": "",
                 "es": ""
             },
             "params": {
                 "query": {
-                    "type": "String",
+                    "type": "Object",
                     "desc": {
                         "en": "",
                         "ru": "",
@@ -256,14 +218,14 @@
         },
         "get_discussions_by_payout": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays a limited number of publications sorted by payments",
+                "ru": "Отображает ограниченное количество публикаций , отсортированных по выплатам",
                 "de": "",
                 "es": ""
             },
             "params": {
                 "query": {
-                    "type": "String",
+                    "type": "Object",
                     "desc": {
                         "en": "",
                         "ru": "",
@@ -275,14 +237,14 @@
         },
         "get_discussions_by_votes": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays a limited number of publications, sorted by votes.",
+                "ru": "Отображает ограниченное количество публикаций, отсортированных по величине голосов.",
                 "de": "",
                 "es": ""
             },
             "params": {
                 "query": {
-                    "type": "String",
+                    "type": "Object",
                     "desc": {
                         "en": "",
                         "ru": "",
@@ -294,14 +256,14 @@
         },
         "get_discussions_by_children": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays a limited number of publications sorted by the number of comments",
+                "ru": "Отображает ограниченное количество публикаций, отсортированных по количеству комментариев",
                 "de": "",
                 "es": ""
             },
             "params": {
                 "query": {
-                    "type": "String",
+                    "type": "Object",
                     "desc": {
                         "en": "",
                         "ru": "",
@@ -313,14 +275,14 @@
         },
         "get_discussions_by_hot": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays a limited number of publications, sorted by popularity.",
+                "ru": "Отображает ограниченное количество публикаций, отсортированных по популярности.",
                 "de": "",
                 "es": ""
             },
             "params": {
                 "query": {
-                    "type": "String",
+                    "type": "Object",
                     "desc": {
                         "en": "",
                         "ru": "",
@@ -332,14 +294,14 @@
         },
         "get_discussions_by_feed": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays a limited number of conversion records for a specific author",
+                "ru": "Отображает ограниченное количество записей конверсий конкретного автора",
                 "de": "",
                 "es": ""
             },
             "params": {
                 "query": {
-                    "type": "String",
+                    "type": "Object",
                     "desc": {
                         "en": "",
                         "ru": "",
@@ -351,14 +313,14 @@
         },
         "get_discussions_by_blog": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays a limited number of publications, from a blog of a specific author.",
+                "ru": "Отображает ограниченное количество публикаций, из блога конкретного автора.",
                 "de": "",
                 "es": ""
             },
             "params": {
                 "query": {
-                    "type": "String",
+                    "type": "Object",
                     "desc": {
                         "en": "",
                         "ru": "",
@@ -370,14 +332,14 @@
         },
         "get_discussions_by_comments": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays a limited number of publications, from the comments of a particular author.",
+                "ru": "Отображает ограниченное количество публикаций, из комментариев конкретного автора.",
                 "de": "",
                 "es": ""
             },
             "params": {
                 "query": {
-                    "type": "String",
+                    "type": "Object",
                     "desc": {
                         "en": "",
                         "ru": "",
@@ -389,14 +351,14 @@
         },
         "get_discussions_by_promoted": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays a limited number of publications sorted by an increased balance amount",
+                "ru": "Отображает ограниченное количество публикаций, отсортированных с помощью увеличенной суммы баланса",
                 "de": "",
                 "es": ""
             },
             "params": {
                 "query": {
-                    "type": "String",
+                    "type": "Object",
                     "desc": {
                         "en": "",
                         "ru": "",
@@ -474,8 +436,8 @@
         },
         "get_state": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays the current network status.",
+                "ru": "Отображает текущее состояние сети.",
                 "de": "",
                 "es": ""
             },
@@ -511,8 +473,8 @@
                 "limit": {
                     "type": "Integer",
                     "desc": {
-                        "en": "limit number (not more than 1000)",
-                        "ru": "предельное колличество (не более 1000)",
+                        "en": "number of results",
+                        "ru": "количество результатов",
                         "de": "",
                         "es": ""
                     }
@@ -537,10 +499,10 @@
                     }
                 },
                 "limit": {
-                    "type": "String",
+                    "type": "Integer",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "number of results",
+                        "ru": "количество результатов",
                         "de": "",
                         "es": ""
                     }
@@ -565,10 +527,10 @@
                     }
                 },
                 "limit": {
-                    "type": "String",
+                    "type": "Integer",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "number of results",
+                        "ru": "количество результатов",
                         "de": "",
                         "es": ""
                     }
@@ -593,10 +555,10 @@
                     }
                 },
                 "limit": {
-                    "type": "String",
+                    "type": "Integer",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "number of results",
+                        "ru": "количество результатов",
                         "de": "",
                         "es": ""
                     }
@@ -605,64 +567,64 @@
         },
         "get_config": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays the current node configuration.",
+                "ru": "Отображает текущую конфигурацию узла.",
                 "de": "",
                 "es": ""
             }
         },
         "get_dynamic_global_properties": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays information about the current network status.",
+                "ru": "Отображает информацию о текущем состоянии сети",
                 "de": "",
                 "es": ""
             }
         },
         "get_chain_properties": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays the commission for creating the user, the maximum block size and the GBG interest rate.",
+                "ru": "Отображает комиссию за создание пользователя, максимальный размер блока и процентную ставку GBG.",
                 "de": "",
                 "es": ""
             }
         },
         "get_feed_history": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays the conversion history",
+                "ru": "Отображает историю конверсий",
                 "de": "",
                 "es": ""
             }
         },
         "get_current_median_history_price": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays the current median price of conversion",
+                "ru": "Отображает текущую медианную цену конвертации",
                 "de": "",
                 "es": ""
             }
         },
         "get_witness_schedule": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays the current delegation status.",
+                "ru": "Отображает текущее состояние делегирования.",
                 "de": "",
                 "es": ""
             }
         },
         "get_hardfork_version": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays the current version of the network.",
+                "ru": "Отображает текущую версию сети.",
                 "de": "",
                 "es": ""
             }
         },
         "get_next_scheduled_hardfork": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays the date and version of HardFork",
+                "ru": "Отображает дату и версию HardFork",
                 "de": "",
                 "es": ""
             }
@@ -707,17 +669,17 @@
         },
         "lookup_account_names": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Returns data for specified accounts",
+                "ru": "Возращает данные по заданным аккаунтам",
                 "de": "",
                 "es": ""
             },
             "params": {
                 "accountNames": {
-                    "type": "String",
+                    "type": "Array",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "accounts(strings) in nested array",
+                        "ru": "имена аккаунтов (строки) в виде массива",
                         "de": "",
                         "es": ""
                     }
@@ -726,8 +688,8 @@
         },
         "lookup_accounts": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Returns the names of users close to the phrase.",
+                "ru": "Возвращает имена пользователей близких к шаблону.",
                 "de": "",
                 "es": ""
             },
@@ -735,17 +697,17 @@
                 "lowerBoundName": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "search template",
+                        "ru": "шаблон поиска",
                         "de": "",
                         "es": ""
                     }
                 },
                 "limit": {
-                    "type": "String",
+                    "type": "Integer",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "number of results",
+                        "ru": "количество результатов",
                         "de": "",
                         "es": ""
                     }
@@ -754,16 +716,16 @@
         },
         "get_account_count": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Returns the number of registered users.",
+                "ru": "Возвращает количество зарегестрированных пользователей.",
                 "de": "",
                 "es": ""
             }
         },
         "get_conversion_requests": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Returns the current requests for conversion by the specified user",
+                "ru": "Возвращает текущие запросы на конвертацию указанным пользователем",
                 "de": "",
                 "es": ""
             },
@@ -771,8 +733,8 @@
                 "accountName": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "username",
+                        "ru": "имя пользователя",
                         "de": "",
                         "es": ""
                     }
@@ -781,8 +743,8 @@
         },
         "get_account_history": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "The history of all user actions on the network in the form of transactions.",
+                "ru": "История всех действий пользователя в сети в виде транзакций.",
                 "de": "",
                 "es": ""
             },
@@ -790,14 +752,14 @@
                 "account": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "username",
+                        "ru": "имя пользователя",
                         "de": "",
                         "es": ""
                     }
                 },
                 "from": {
-                    "type": "String",
+                    "type": "Integer",
                     "desc": {
                         "en": "",
                         "ru": "",
@@ -806,10 +768,10 @@
                     }
                 },
                 "limit": {
-                    "type": "String",
+                    "type": "Integer",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "number of results",
+                        "ru": "колличество результатов",
                         "de": "",
                         "es": ""
                     }
@@ -818,8 +780,8 @@
         },
         "get_owner_history": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays the user name if he changed the ownership of the blockchain",
+                "ru": "Отображает имя пользователя если он изменил право собственности на блокчейн",
                 "de": "",
                 "es": ""
             },
@@ -827,8 +789,8 @@
                 "account": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "username",
+                        "ru": "имя пользователя",
                         "de": "",
                         "es": ""
                     }
@@ -837,8 +799,8 @@
         },
         "get_recovery_request": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Returns true if the user is in recovery status.",
+                "ru": "Возвращает true если пользователь в статусе на восстановление.",
                 "de": "",
                 "es": ""
             },
@@ -846,8 +808,8 @@
                 "account": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "username",
+                        "ru": "имя пользователя",
                         "de": "",
                         "es": ""
                     }
@@ -856,8 +818,8 @@
         },
         "get_escrow": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Returns the operations implemented through mediation.",
+                "ru": "Возвращает операции реализованные с помощью посредничества.",
                 "de": "",
                 "es": ""
             },
@@ -865,17 +827,17 @@
                 "from": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "reseller Name",
+                        "ru": "имя посредника",
                         "de": "",
                         "es": ""
                     }
                 },
                 "escrowId": {
-                    "type": "String",
+                    "type": "Integer",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "unique transaction number",
+                        "ru": "уникальный номер операции",
                         "de": "",
                         "es": ""
                     }
@@ -884,8 +846,8 @@
         },
         "get_withdraw_routes": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Returns all transfers to the user's account, depending on the type",
+                "ru": "Возвращает все переводы на счету пользователя в зависимости от типа",
                 "de": "",
                 "es": ""
             },
@@ -893,8 +855,8 @@
                 "account": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "username",
+                        "ru": "имя пользователя",
                         "de": "",
                         "es": ""
                     }
@@ -902,8 +864,8 @@
                 "withdrawRouteType": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "the type of transfer can be (incoming, outgoing, all)",
+                        "ru": "тип перевода может быть (incoming,outgoing,all)",
                         "de": "",
                         "es": ""
                     }
@@ -912,8 +874,8 @@
         },
         "get_account_bandwidth": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays user actions based on type",
+                "ru": "Отображает действия пользователя в зависимости от типа",
                 "de": "",
                 "es": ""
             },
@@ -921,17 +883,17 @@
                 "account": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "username",
+                        "ru": "имя пользователя",
                         "de": "",
                         "es": ""
                     }
                 },
                 "bandwidthType": {
-                    "type": "String",
+                    "type": "Integer",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "The type is given by a number: 0-post, 1- forum, 2- market, 3- old_forum, 4- old_market",
+                        "ru": "Тип задается числом: 0- post , 1- forum , 2- market , 3- old_forum , 4- old_market",
                         "de": "",
                         "es": ""
                     }
@@ -940,8 +902,8 @@
         },
         "get_savings_withdraw_from": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Returns the output data from 'SAFE' for this user",
+                "ru": "Возвращает данные о выводах из 'СЕЙФА' для данного пользователя",
                 "de": "",
                 "es": ""
             },
@@ -949,8 +911,8 @@
                 "account": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "username",
+                        "ru": "имя пользователя",
                         "de": "",
                         "es": ""
                     }
@@ -959,8 +921,8 @@
         },
         "get_savings_withdraw_to": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Returns the output data from 'SAFE' for this user",
+                "ru": "Возвращает данные о выводах из 'СЕЙФА' для данного пользователя",
                 "de": "",
                 "es": ""
             },
@@ -968,8 +930,8 @@
                 "account": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "username",
+                        "ru": "имя пользователя",
                         "de": "",
                         "es": ""
                     }
@@ -978,17 +940,17 @@
         },
         "get_order_book": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays a list of applications on the internal exchange for the purchase and sale of the network",
+                "ru": "Отображает список заявок на внутренней бирже на покупку и продажу в сети",
                 "de": "",
                 "es": ""
             },
             "params": {
                 "limit": {
-                    "type": "String",
+                    "type": "Integer",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "number of results",
+                        "ru": "количество результатов",
                         "de": "",
                         "es": ""
                     }
@@ -997,8 +959,8 @@
         },
         "get_open_orders": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays a list of orders on the internal exchange for the purchase and sale on the network for the specified user.",
+                "ru": "Отображает список заявок на внутренней бирже на покупку и продажу в сети для указанного пользователя.",
                 "de": "",
                 "es": ""
             },
@@ -1006,8 +968,8 @@
                 "owner": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "username",
+                        "ru": "имя пользователя",
                         "de": "",
                         "es": ""
                     }
@@ -1025,17 +987,17 @@
                 "startAccount": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "username",
+                        "ru": "имя пользователя",
                         "de": "",
                         "es": ""
                     }
                 },
                 "limit": {
-                    "type": "String",
+                    "type": "Integer",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "number of results",
+                        "ru": "количество результатов",
                         "de": "",
                         "es": ""
                     }
@@ -1044,17 +1006,17 @@
         },
         "get_transaction_hex": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays the HEX transaction string.",
+                "ru": "Отображает HEX строку транзакции.",
                 "de": "",
                 "es": ""
             },
             "params": {
                 "trx": {
-                    "type": "String",
+                    "type": "Object",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "signed transaction.",
+                        "ru": "подписанная транзакция",
                         "de": "",
                         "es": ""
                     }
@@ -1063,8 +1025,8 @@
         },
         "get_transaction": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays transaction details for the specified transaction ID.",
+                "ru": "Отображает детали транзакции по заданному ID транзакции.",
                 "de": "",
                 "es": ""
             },
@@ -1072,8 +1034,8 @@
                 "trxId": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "id",
+                        "ru": "id",
                         "de": "",
                         "es": ""
                     }
@@ -1089,19 +1051,19 @@
             },
             "params": {
                 "trx": {
-                    "type": "String",
+                    "type": "Object",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "signed transaction",
+                        "ru": "подписанная транзакция",
                         "de": "",
                         "es": ""
                     }
                 },
                 "availableKeys": {
-                    "type": "String",
+                    "type": "Array",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "List of keys in the form of a string array",
+                        "ru": "список ключей в виде строкового масива",
                         "de": "",
                         "es": ""
                     }
@@ -1110,17 +1072,17 @@
         },
         "get_potential_signatures": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays the potential key for this transaction.",
+                "ru": "Отображает потенциальный ключ для данной транзакции.",
                 "de": "",
                 "es": ""
             },
             "params": {
                 "trx": {
-                    "type": "String",
+                    "type": "Object",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "signed transaction.",
+                        "ru": "подписанная транзакция",
                         "de": "",
                         "es": ""
                     }
@@ -1129,17 +1091,17 @@
         },
         "verify_authority": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Returns TRUE if the transaction is signed correctly",
+                "ru": "Возвращает TRUE если транзакция подписана правильно",
                 "de": "",
                 "es": ""
             },
             "params": {
                 "trx": {
-                    "type": "String",
+                    "type": "Object",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "signed transaction.",
+                        "ru": "подписанная транзакция",
                         "de": "",
                         "es": ""
                     }
@@ -1157,17 +1119,17 @@
                 "nameOrId": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "username or id",
+                        "ru": "имя пользователя или id",
                         "de": "",
                         "es": ""
                     }
                 },
                 "signers": {
-                    "type": "String",
+                    "type": "Array",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "List of keys in the form of a string array",
+                        "ru": "список ключей в виде строкового масива",
                         "de": "",
                         "es": ""
                     }
@@ -1176,8 +1138,8 @@
         },
         "get_active_votes": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays the list of users who voted for the specified entry",
+                "ru": "Отображает список пользователей проголосовавших за указанную запись",
                 "de": "",
                 "es": ""
             },
@@ -1185,8 +1147,8 @@
                 "author": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "username (author of the publication)",
+                        "ru": "имя пользователя (автора публикации)",
                         "de": "",
                         "es": ""
                     }
@@ -1194,8 +1156,8 @@
                 "permlink": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "link to publication",
+                        "ru": "ссылка на публикацию",
                         "de": "",
                         "es": ""
                     }
@@ -1204,8 +1166,8 @@
         },
         "get_account_votes": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays all the voices that are displayed by the specified user",
+                "ru": "Отображает все голоса которые выставлены указанным пользователем",
                 "de": "",
                 "es": ""
             },
@@ -1213,8 +1175,8 @@
                 "voter": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "username",
+                        "ru": "имя пользователя",
                         "de": "",
                         "es": ""
                     }
@@ -1223,8 +1185,8 @@
         },
         "get_content": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Gets information about the publication, with the exception of comments",
+                "ru": "Получает информацию о публикации, за исключением комментариев",
                 "de": "",
                 "es": ""
             },
@@ -1232,8 +1194,8 @@
                 "author": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "username",
+                        "ru": "имя пользователя",
                         "de": "",
                         "es": ""
                     }
@@ -1241,8 +1203,8 @@
                 "permlink": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "link to publication",
+                        "ru": "ссылка на публикацию",
                         "de": "",
                         "es": ""
                     }
@@ -1251,17 +1213,17 @@
         },
         "get_content_replies": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays a list of all comments for the selected publication",
+                "ru": "Отображает список всех комментариев для выбранной публикации",
                 "de": "",
                 "es": ""
             },
             "params": {
-                "parent": {
+                "author": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "username",
+                        "ru": "имя пользователя",
                         "de": "",
                         "es": ""
                     }
@@ -1269,8 +1231,8 @@
                 "parentPermlink": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "link to publication",
+                        "ru": "ссылка на публикацию",
                         "de": "",
                         "es": ""
                     }
@@ -1279,8 +1241,8 @@
         },
         "get_discussions_by_author_before_date": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays a limited number of user publications",
+                "ru": "Отображает ограниченное количество публикации пользователя",
                 "de": "",
                 "es": ""
             },
@@ -1288,8 +1250,8 @@
                 "author": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "username",
+                        "ru": "имя пользователя",
                         "de": "",
                         "es": ""
                     }
@@ -1297,8 +1259,8 @@
                 "startPermlink": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "link to the publication from which to start filtering (may be empty)",
+                        "ru": "ссылка на публикацию с которой начинать фильтровать (может быть пустым)",
                         "de": "",
                         "es": ""
                     }
@@ -1306,17 +1268,17 @@
                 "beforeDate": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "date to which to filter",
+                        "ru": "дата до которой фильтровать",
                         "de": "",
                         "es": ""
                     }
                 },
                 "limit": {
-                    "type": "String",
+                    "type": "Integer",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "number of results",
+                        "ru": "количество результатов",
                         "de": "",
                         "es": ""
                     }
@@ -1350,10 +1312,10 @@
                     }
                 },
                 "limit": {
-                    "type": "String",
+                    "type": "Integer",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "number of results",
+                        "ru": "количество результатов",
                         "de": "",
                         "es": ""
                     }
@@ -1362,17 +1324,17 @@
         },
         "get_witnesses": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays delegate data according to the specified ID",
+                "ru": "Отображает данные о делегатах в соответствии с заданными ID",
                 "de": "",
                 "es": ""
             },
             "params": {
                 "witnessIds": {
-                    "type": "String",
+                    "type": "Array",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "id",
+                        "ru": "id",
                         "de": "",
                         "es": ""
                     }
@@ -1381,8 +1343,8 @@
         },
         "get_witness_by_account": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays data about the delegate (if it is) according to the data from the request",
+                "ru": "Отображает данные о делегате (если он им является) в соответствии с данными из запроса",
                 "de": "",
                 "es": ""
             },
@@ -1390,8 +1352,8 @@
                 "accountName": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "username",
+                        "ru": "имя пользователя",
                         "de": "",
                         "es": ""
                     }
@@ -1400,8 +1362,8 @@
         },
         "get_witnesses_by_vote": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays a limited list of delegates approving the vote.",
+                "ru": "Отображает ограниченный список делегатов одобряющих голосование.",
                 "de": "",
                 "es": ""
             },
@@ -1409,17 +1371,17 @@
                 "from": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "username (If the first parameter is empty, the leading delegates are displayed, if the first parameter is specified, the list starts with the specified delegate.)",
+                        "ru": "имя пользователя (Если первый параметр пуст то отображаются ведущие делегаты, если первый параметр указан то список начинается с указанного делегата.)",
                         "de": "",
                         "es": ""
                     }
                 },
                 "limit": {
-                    "type": "String",
+                    "type": "Integer",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "number of results",
+                        "ru": "количество результатов",
                         "de": "",
                         "es": ""
                     }
@@ -1428,8 +1390,8 @@
         },
         "lookup_witness_accounts": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays a limited list of users who have announced their intention to work as a delegate.",
+                "ru": "Отображает ограниченный список пользователей, которые объявили о своем намерении работать в качестве делегата.",
                 "de": "",
                 "es": ""
             },
@@ -1437,17 +1399,17 @@
                 "lowerBoundName": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "search pattern",
+                        "ru": "шаблон поиска",
                         "de": "",
                         "es": ""
                     }
                 },
                 "limit": {
-                    "type": "String",
+                    "type": "Integer",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "number of results",
+                        "ru": "количество результатов",
                         "de": "",
                         "es": ""
                     }
@@ -1456,24 +1418,24 @@
         },
         "get_witness_count": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays the number of delegates.",
+                "ru": "Отображает количество делегатов.",
                 "de": "",
                 "es": ""
             }
         },
         "get_active_witnesses": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays a list of all active delegates.",
+                "ru": "Отображает список всех активных делегатов.",
                 "de": "",
                 "es": ""
             }
         },
         "get_miner_queue": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Creates a list of the miners waiting to enter the DPOW chain to create the block.",
+                "ru": "Создает список майнеров, ожидающих попасть в DPOW цепочку, чтобы создать блок.",
                 "de": "",
                 "es": ""
             }
@@ -1524,10 +1486,10 @@
                     }
                 },
                 "limit": {
-                    "type": "String",
+                    "type": "Integer",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "number of results",
+                        "ru": "количество результатов",
                         "de": "",
                         "es": ""
                     }
@@ -1650,10 +1612,10 @@
                     }
                 },
                 "limit": {
-                    "type": "String",
+                    "type": "Integer",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "number of results",
+                        "ru": "количество результатов",
                         "de": "",
                         "es": ""
                     }
@@ -1696,10 +1658,10 @@
                     }
                 },
                 "limit": {
-                    "type": "String",
+                    "type": "Integer",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "number of results",
+                        "ru": "количество результатов",
                         "de": "",
                         "es": ""
                     }
@@ -1752,10 +1714,10 @@
                     }
                 },
                 "limit": {
-                    "type": "String",
+                    "type": "Integer",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "number of results",
+                        "ru": "количество результатов",
                         "de": "",
                         "es": ""
                     }
@@ -1789,10 +1751,10 @@
                     }
                 },
                 "limit": {
-                    "type": "String",
+                    "type": "Integer",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "number of results",
+                        "ru": "количество результатов",
                         "de": "",
                         "es": ""
                     }
@@ -1826,10 +1788,10 @@
                     }
                 },
                 "limit": {
-                    "type": "String",
+                    "type": "Integer",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "number of results",
+                        "ru": "количество результатов",
                         "de": "",
                         "es": ""
                     }
@@ -1863,10 +1825,10 @@
                     }
                 },
                 "limit": {
-                    "type": "String",
+                    "type": "Integer",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "number of results",
+                        "ru": "количество результатов",
                         "de": "",
                         "es": ""
                     }
@@ -1891,10 +1853,10 @@
                     }
                 },
                 "limit": {
-                    "type": "String",
+                    "type": "Integer",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "number of results",
+                        "ru": "количество результатов",
                         "de": "",
                         "es": ""
                     }
@@ -2058,33 +2020,33 @@
     "market_history_api": {
         "get_ticker": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Returns the market ticker for the internal market",
+                "ru": "Возвращает рыночный тикет для внутреннего рынка ",
                 "de": "",
                 "es": ""
             }
         },
         "get_volume": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Returns the market volume for the past 24 hours",
+                "ru": "Возвращает объем рынка за последние 24 часа",
                 "de": "",
                 "es": ""
             }
         },
         "get_order_book": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Displays a list of applications on the internal exchange for the purchase and sale of the network",
+                "ru": "Отображает список заявок на внутренней бирже на покупку и продажу в сети",
                 "de": "",
                 "es": ""
             },
             "params": {
                 "limit": {
-                    "type": "String",
+                    "type": "Integer",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "number of results",
+                        "ru": "количество результатов",
                         "de": "",
                         "es": ""
                     }
@@ -2093,35 +2055,35 @@
         },
         "get_trade_history": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Returns the trade history for the internal market.",
+                "ru": "Возвращает историю торговли для внутреннего рынка",
                 "de": "",
                 "es": ""
             },
             "params": {
                 "start": {
-                    "type": "String",
+                    "type": "String/Integer",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "trading start time",
+                        "ru": "время начала торгов",
                         "de": "",
                         "es": ""
                     }
                 },
                 "end": {
-                    "type": "String",
+                    "type": "String/Integer",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "closing time",
+                        "ru": "время окончания торгов",
                         "de": "",
                         "es": ""
                     }
                 },
                 "limit": {
-                    "type": "String",
+                    "type": "Integer",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "number of results",
+                        "ru": "количество результатов",
                         "de": "",
                         "es": ""
                     }
@@ -2130,17 +2092,17 @@
         },
         "get_recent_trades": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Returns the N most recent trades for the internal market.",
+                "ru": "Возвращает N последних сделок для внутреннего рынка",
                 "de": "",
                 "es": ""
             },
             "params": {
                 "limit": {
-                    "type": "String",
+                    "type": "Integer",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "number of results",
+                        "ru": "количество результатов",
                         "de": "",
                         "es": ""
                     }
@@ -2149,35 +2111,35 @@
         },
         "get_market_history": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Returns the market history for the internal market.",
+                "ru": "Возвращает историю рынка для внутреннего рынка",
                 "de": "",
                 "es": ""
             },
             "params": {
                 "bucket_seconds": {
-                    "type": "String",
+                    "type": "Integer",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "size of buckets",
+                        "ru": "размер ведра",
                         "de": "",
                         "es": ""
                     }
                 },
                 "start": {
-                    "type": "String",
+                    "type": "String/Integer",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "trading start time",
+                        "ru": "время начала торгов",
                         "de": "",
                         "es": ""
                     }
                 },
                 "end": {
-                    "type": "String",
+                    "type": "String/Integer",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "closing time",
+                        "ru": "время окончания торгов",
                         "de": "",
                         "es": ""
                     }
@@ -2186,8 +2148,8 @@
         },
         "get_market_history_buckets": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Returns the bucket seconds being tracked by the plugin",
+                "ru": "Возвращает ведро секунд, отслеживаемых плагином",
                 "de": "",
                 "es": ""
             }
