@@ -11,15 +11,19 @@ class ApiMethodParameters extends Component {
   render() {
     
     let method = this.props.method;
+    let urlParams = this.props.urlParams;
     
     if(method.params) {
         const methodParamerItems = method.paramNames.map((parameterName) =>
-            <Parameter param={method.params[parameterName]} onChange={this.props.onChange} />
+            
+            <Parameter param={method.params[parameterName]} onChange={this.props.onChange} urlParams = {urlParams} paramValues = {this.props.paramValues}/>
         );
         
         return (
         <div>
-            {methodParamerItems}
+            <table>
+                {methodParamerItems}
+            </table>
         </div>
         );
     } else {
