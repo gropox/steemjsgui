@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Home from './pages/Home';
 import Api from './pages/Api';
 import Broadcast from './pages/Broadcast';
 import Method from './pages/ApiMethod';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
-import { Router, Route, BrowserRouter } from 'react-router-dom'
+import { Route, BrowserRouter } from 'react-router-dom'
 
 ReactDOM.render(
   <BrowserRouter basename={'steemjs'}>

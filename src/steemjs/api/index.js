@@ -56,7 +56,7 @@ class Method {
     execute() {
         var camelName = camelCase(this.name);
         var args = Array.prototype.splice.call(arguments, 0);
-        console.log("Execute " + camelName + "Async(" + JSON.stringify(args) + ")" );
+        //console.log("Execute " + camelName + "Async(" + JSON.stringify(args) + ")" );
         return steem.api[camelName + "Async"].apply(steem.api, args);
         //return steem.api.getDynamicGlobalPropertiesAsync();
     }
@@ -107,7 +107,6 @@ class SteemApi {
                 dump[m.api][m.name] = mdump;
             }
         }
-        console.log(JSON.stringify(dump, null, 4));
     }
 }
 
@@ -126,14 +125,12 @@ SteemApi.setBlockchain = function(bc) {
         steem.config.set('websocket',"wss://steemd.steemit.com");
         steem.config.set('address_prefix',"STM");
         steem.config.set('chain_id','0000000000000000000000000000000000000000000000000000000000000000');        
-        console.log(steem.config.get('websocket'));
     } else {
         BLOCKCHAIN = SteemApi.Blockchain.GOLOS;
         steem.api.stop();
         steem.config.set('websocket',"wss://ws.golos.io");
         steem.config.set('address_prefix',"GLS");
         steem.config.set('chain_id','782a3039b478c839e4cb0c941ff4eaeb7df40bdd68bd441afd444b9da763de12');        
-        console.log(steem.config.get('websocket'));
     }
 }
 
