@@ -1578,8 +1578,8 @@
     "follow_api": {
         "get_followers": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Returns the list: Either all of the subscribers of the user are 'following'. Or, if the user name is specified, the list of matching subscribers is returned in the parameter 'startFollower'.",
+                "ru": "Возвращает список: Либо всех подписчиков пользователя 'following'. Либо если указано имя пользователя в параметре 'startFollower' возвращается список совпадающих подписчиков.",
                 "de": "",
                 "es": ""
             },
@@ -1587,8 +1587,8 @@
                 "following": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "username",
+                        "ru": "имя пользователя",
                         "de": "",
                         "es": ""
                     }
@@ -1596,8 +1596,8 @@
                 "startFollower": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "username (can be empty)",
+                        "ru": "имя пользователя (может быть пустым)",
                         "de": "",
                         "es": ""
                     }
@@ -1605,8 +1605,8 @@
                 "followType": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "String values (undefined, blog, ignore)",
+                        "ru": "строковые значения (undefined,blog,ignore)",
                         "de": "",
                         "es": ""
                     }
@@ -1633,8 +1633,8 @@
                 "follower": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "username",
+                        "ru": "имя пользователя",
                         "de": "",
                         "es": ""
                     }
@@ -1642,8 +1642,8 @@
                 "startFollowing": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "username",
+                        "ru": "имя пользователя",
                         "de": "",
                         "es": ""
                     }
@@ -1651,8 +1651,8 @@
                 "followType": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "String values (undefined, blog, ignore)",
+                        "ru": "строковые значения (undefined,blog,ignore)",
                         "de": "",
                         "es": ""
                     }
@@ -1670,8 +1670,8 @@
         },
         "get_follow_count": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Returns information about the number of subscribers and subscriptions of the specified user.",
+                "ru": "Возвращает данные о количестве подписчиков и подписок указанного пользователя.",
                 "de": "",
                 "es": ""
             },
@@ -1679,8 +1679,8 @@
                 "account": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "username",
+                        "ru": "имя пользователя",
                         "de": "",
                         "es": ""
                     }
@@ -1689,8 +1689,8 @@
         },
         "get_feed_entries": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Returns brief information about records from the specified user's tape",
+                "ru": "Возвращает краткие данные о записях из ленты указанного пользователя",
                 "de": "",
                 "es": ""
             },
@@ -1698,17 +1698,17 @@
                 "account": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "username",
+                        "ru": "имя пользователя",
                         "de": "",
                         "es": ""
                     }
                 },
                 "entryId": {
-                    "type": "String",
+                    "type": "Integer",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "id records (if 0 then the most recent)",
+                        "ru": "id записи (если 0 то самые свежие)",
                         "de": "",
                         "es": ""
                     }
@@ -1726,8 +1726,8 @@
         },
         "get_feed": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Returns the complete record data from the specified user's tape.",
+                "ru": "Возвращает полные данные о записях из ленты указанного пользователя.",
                 "de": "",
                 "es": ""
             },
@@ -1735,17 +1735,17 @@
                 "account": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "username",
+                        "ru": "имя пользователя",
                         "de": "",
                         "es": ""
                     }
                 },
                 "entryId": {
-                    "type": "String",
+                    "type": "Integer",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "id records (if 0 then the most recent)",
+                        "ru": "id записи (если 0 то самые свежие)",
                         "de": "",
                         "es": ""
                     }
@@ -1763,8 +1763,8 @@
         },
         "get_blog_entries": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Returns brief information about records from the blog of the specified user.",
+                "ru": "Возвращает краткие данные о записях из блога указанного пользователя.",
                 "de": "",
                 "es": ""
             },
@@ -1772,17 +1772,17 @@
                 "account": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "username",
+                        "ru": "имя пользователя",
                         "de": "",
                         "es": ""
                     }
                 },
                 "entryId": {
-                    "type": "String",
+                    "type": "Integer",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "id records (if 0 then the most recent)",
+                        "ru": "id записи (если 0 то самые свежие)",
                         "de": "",
                         "es": ""
                     }
@@ -1800,8 +1800,8 @@
         },
         "get_blog": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Returns the complete record data from the blog of the specified user.",
+                "ru": "Возвращает полные данные о записях из блога указанного пользователя.",
                 "de": "",
                 "es": ""
             },
@@ -1809,17 +1809,17 @@
                 "account": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "username",
+                        "ru": "имя пользователя",
                         "de": "",
                         "es": ""
                     }
                 },
                 "entryId": {
-                    "type": "String",
+                    "type": "Integer",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "id records (if 0 then the most recent)",
+                        "ru": "id записи (если 0 то самые свежие)",
                         "de": "",
                         "es": ""
                     }
@@ -1837,8 +1837,8 @@
         },
         "get_account_reputations": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Returns data about the reputation of users filtered by template.",
+                "ru": "Возвращает данные о репутации пользователей отфильтрованных по шаблону.",
                 "de": "",
                 "es": ""
             },
@@ -1846,8 +1846,8 @@
                 "lowerBoundName": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "search pattern",
+                        "ru": "шаблон поиска",
                         "de": "",
                         "es": ""
                     }
@@ -1865,8 +1865,8 @@
         },
         "get_reblogged_by": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Returns the list of users who either created the record or made it a repost.",
+                "ru": "Возвращает список пользователей которые либо создали запись либо сделали её репост.",
                 "de": "",
                 "es": ""
             },
@@ -1874,8 +1874,8 @@
                 "author": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "username",
+                        "ru": "имя пользователя",
                         "de": "",
                         "es": ""
                     }
@@ -1883,8 +1883,8 @@
                 "permlink": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "link to publication",
+                        "ru": "ссылка на публикацию",
                         "de": "",
                         "es": ""
                     }
@@ -1893,8 +1893,8 @@
         },
         "get_blog_authors": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Returns the list of authors and the number of reposts of this author by the user.",
+                "ru": "Возвращает список авторов и количество репостов этого автора пользователем.",
                 "de": "",
                 "es": ""
             },
@@ -1902,8 +1902,8 @@
                 "blogAccount": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "username",
+                        "ru": "имя пользователя",
                         "de": "",
                         "es": ""
                     }
@@ -2121,7 +2121,7 @@
                     "type": "Integer",
                     "desc": {
                         "en": "size of buckets",
-                        "ru": "размер ведра",
+                        "ru": "размер стакана(среза)",
                         "de": "",
                         "es": ""
                     }
@@ -2149,7 +2149,7 @@
         "get_market_history_buckets": {
             "desc": {
                 "en": "Returns the bucket seconds being tracked by the plugin",
-                "ru": "Возвращает ведро секунд, отслеживаемых плагином",
+                "ru": "Возвращает размер секунд стакана(среза), отслеживаемых плагином.",
                 "de": "",
                 "es": ""
             }
