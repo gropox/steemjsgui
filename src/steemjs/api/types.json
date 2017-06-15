@@ -743,8 +743,8 @@
         },
         "get_account_history": {
             "desc": {
-                "en": "The history of all user actions on the network in the form of transactions.",
-                "ru": "История всех действий пользователя в сети в виде транзакций.",
+                "en": "The history of all user actions on the network in the form of transactions. If from = -1, then are last {limit+1} history elements are shown. Parameter limit should be less or equals {from} (except from = -1). This is because elements preceding {from} are shown. ",
+                "ru": "История всех действий пользователя в сети в виде транзакций. При from = -1 будут показаны последние {limit+1} элементов истории. Параметр limit не должен превышать from (исключение from = -1), так как показываются предшествующие {from} элементы истории.",
                 "de": "",
                 "es": ""
             },

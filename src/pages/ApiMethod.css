@@ -2,7 +2,7 @@
 .json-pretty {
   line-height: 1.3;
   color: rgba(45,145,18,1);
-  background: #ffffff;
+  background: #f1f1f1;
 }
 
 .json-key {
@@ -19,4 +19,44 @@
 
 .json-boolean {
     color: rgba(75,174,22,1);
+}
+
+.ApiMethod {
+    margin: 5px;
+}
+
+.ApiMethod-header {
+    padding: 5px;
+    font-size: 150%;
+}
+
+.ApiMethod-desc {
+    padding: 5px;
+    font-size: 100%;
+}
+
+.ApiMethod-params {
+    padding: 5px;
+}
+
+.ApiMethod-buttons {
+    padding: 5px;
+}
+
+.ApiMethod-result {
+    padding: 5px;
+    border: solid 1px;
+    background: #f1f1f1;
+    min-height:100vh;
+}
+
+.ApiMethod-error {
+    padding: 5px;
+    border: solid 1px;
+    background: #f15151;
+    min-height:100vh;
+}
+
+.ApiMethod-content {
+    margin-top : 150px;
 }
