@@ -978,8 +978,8 @@
         },
         "get_liquidity_queue": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Gets the current liquidity reward queue.",
+                "ru": "Получает текущую очередность выплаты ликвидности.",
                 "de": "",
                 "es": ""
             },
@@ -1044,8 +1044,8 @@
         },
         "get_required_signatures": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "This API will take a partially signed transaction and a set of public keys that the owner has the ability to sign for and return the minimal subset of public keys that should add signatures to the transaction.",
+                "ru": "Возвращает список ключей которыми может быть подписанна указанная транзакция, на основании списка предоставленных ключей(второй параметр)",
                 "de": "",
                 "es": ""
             },
@@ -1110,8 +1110,8 @@
         },
         "verify_account_authority": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Return true if the signers have enough authority to authorize an account",
+                "ru": "Возвращает  true, если у пользователя есть достаточные полномочия для авторизации учетной записи",
                 "de": "",
                 "es": ""
             },
@@ -1287,8 +1287,8 @@
         },
         "get_replies_by_last_update": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Return the active discussions with the highest cumulative pending payouts without respect to category, total  pending payout means the pending payout of all children as well.",
+                "ru": "Верните активные обсуждения с самыми высокими совокупными ожидающими выплатами без учета категории, общая ожидаемая выплата означает ожидаемую всю выплату.",
                 "de": "",
                 "es": ""
             },
@@ -1296,8 +1296,8 @@
                 "startAuthor": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "username",
+                        "ru": "имя пользователя",
                         "de": "",
                         "es": ""
                     }
@@ -1305,8 +1305,8 @@
                 "startPermlink": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "link to publication",
+                        "ru": "ссылка на публикацию",
                         "de": "",
                         "es": ""
                     }
@@ -1521,8 +1521,8 @@
     "login_api": {
         "login": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Allows you to connect to the accounts on the network.",
+                "ru": "Позволяет подключаться к учетным записям в сети.",
                 "de": "",
                 "es": ""
             },
@@ -1530,8 +1530,8 @@
                 "username": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "username",
+                        "ru": "имя пользователя",
                         "de": "",
                         "es": ""
                     }
@@ -1539,8 +1539,8 @@
                 "password": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "user password",
+                        "ru": "пароль пользователя",
                         "de": "",
                         "es": ""
                     }
@@ -1549,8 +1549,8 @@
         },
         "get_api_by_name": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Returns the unique API identifier by its name.",
+                "ru": "Возвращает уникальный идентификатор API по его имени.",
                 "de": "",
                 "es": ""
             },
@@ -1558,8 +1558,8 @@
                 "apiName": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "API name (example login_api or follow_api)",
+                        "ru": "имя API (пример login_api или follow_api)",
                         "de": "",
                         "es": ""
                     }
@@ -1568,8 +1568,8 @@
         },
         "get_version": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Returns the version information for the components of the blockchain.",
+                "ru": "Возвращает данные о версии компонентов блокчейн",
                 "de": "",
                 "es": ""
             }
@@ -1914,17 +1914,17 @@
     "network_broadcast_api": {
         "broadcast_transaction": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "The transaction will be checked for validity in the local database prior to broadcasting. If it fails to apply locally, an error will be thrown and the transaction will not be broadcast.",
+                "ru": "Транзакция будет проверяться на достоверность в локальной базе данных до начала трансляции. Если он не может применяться локально, будет вызвана ошибка, и транзакция не будет транслироваться.",
                 "de": "",
                 "es": ""
             },
             "params": {
                 "trx": {
-                    "type": "String",
+                    "type": "Object",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "signed transaction",
+                        "ru": "подписанная транзакция",
                         "de": "",
                         "es": ""
                     }
@@ -1933,8 +1933,8 @@
         },
         "broadcast_transaction_with_callback": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "this version of broadcast transaction registers a callback method that will be called when the transaction is included into a block.  The callback method includes the transaction id, block number, and transaction number in the block.",
+                "ru": "Эта версия широковещательной транзакции регистрирует метод обратного вызова, который будет вызываться, когда транзакция включена в блок. Метод обратного вызова включает идентификатор транзакции, номер блока и номер транзакции в блоке.",
                 "de": "",
                 "es": ""
             },
@@ -1942,17 +1942,17 @@
                 "confirmationCallback": {
                     "type": "String",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "callback method",
+                        "ru": "метод обратного вызова",
                         "de": "",
                         "es": ""
                     }
                 },
                 "trx": {
-                    "type": "String",
+                    "type": "Object",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "signed transaction",
+                        "ru": "подписанная транзакция",
                         "de": "",
                         "es": ""
                     }
@@ -1961,17 +1961,17 @@
         },
         "broadcast_transaction_synchronous": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "This call will not return until the transaction is included in a block.",
+                "ru": "Этот вызов не будет возвращен до тех пор, пока транзакция не будет включена в блок.",
                 "de": "",
                 "es": ""
             },
             "params": {
                 "trx": {
-                    "type": "String",
+                    "type": "Object",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "signed transaction",
+                        "ru": "подписанная транзакция",
                         "de": "",
                         "es": ""
                     }
