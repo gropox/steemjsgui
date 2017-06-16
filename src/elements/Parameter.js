@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
-import SteemApi from "../steemjs/api";
 import types from "../steemjs/api/types.json";
 import ParameterCss from "./Parameter.css";
+import ArrayParameter from "./ArrayParameter.js";
+import ObjectParameter from "./ObjectParameter.js";
+import {getDesc} from "../utils/helpers";
 
 class Parameter extends Component {
     
   constructor() {
       super();
-      this.steemapi = new SteemApi();
       this.state = {count : 1};
   }  
     
@@ -23,16 +23,21 @@ class Parameter extends Component {
     
     let param = this.props.param;
 
-    let input = <input type="text" name={param.name} onChange={this.props.onChange} value = {getValue(param.name)}/>
-    console.log(param.type);
-    if(param.type == "Array") {
-        input = [0,1,2].map((pIdx) =>
-            <div><input type="text" name={param.name + "_" + pIdx} onChange={this.props.onChange} value = {getValue(param.name + "_" + pIdx)}/></div>
-        );
-    }    
+    let input = null;
+    switch(param.type) {
+        case "Array" :
+            input = <ArrayParameter paramValues = {paramValues} onChange={this.props.onChange} param = {param} getValue = {getValue}/>;
+            break;
+        case "Object" :
+            input = <ObjectParameter paramValues = {paramValues} onChange={this.props.onChange} param = {param} getValue = {getValue}/>;
+            break;
+        default:
+            input = <input type="text" name={param.name} onChange={this.props.onChange} value = {getValue(param.name)}/>;
+    }
+          
     return (
     <tr>
-        <td title={param.desc.ru} className="Parameter-name">
+        <td title={getDesc(param.desc)} className="Parameter-name">
         {param.name}:&nbsp;
         </td>
         <td>

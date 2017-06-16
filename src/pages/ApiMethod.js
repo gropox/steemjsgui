@@ -6,17 +6,15 @@ import ApiMethodCss from "./ApiMethod.css";
 import Header from "../elements/Header";
 import queryString from "query-string";
 //import { withRouter } from 'react-router';
+import { Link } from 'react-router-dom';
+import {getDesc} from "../utils/helpers";
 
 class ApiMethod extends Component {
     
   constructor() {
       super();
       this.steemapi = new SteemApi();
-      this.state = {};
-      this.state.result = null;
-      this.state.error = false;
-      this.state.executing = false;
-      
+      this.state = {result : null, error:false, executing:false};
       
       this.onExecute = this.onExecute.bind(this);
       this.onChange = this.onChange.bind(this);
@@ -24,7 +22,6 @@ class ApiMethod extends Component {
   }  
     
     onExecute(event) {
-        console.log("Execute");
         if(event) {
         //    event.preventDefault();
         }
@@ -32,7 +29,6 @@ class ApiMethod extends Component {
         let apiName = this.props.match.params.api_name;
         let method = this.steemapi.methods[apiName][methodName];
         let params = [];
-        console.log(JSON.stringify(method.params));
         if(method.params) {
             for(let pname of method.paramNames) {
                 if(method.params[pname].type == "Array") {
@@ -44,16 +40,30 @@ class ApiMethod extends Component {
                         }
                     }
                     params.push(value);
+                } else if(method.params[pname].type == "Object") {
+                    let value = this.state[pname];
+                    try {
+                        value = JSON.parse(value);
+                        if(typeof value != "object") {
+                            this.setState({result : {steemjsgui: "value is not an object!", parameter : pname}});
+                            return;
+                        }
+                        params.push(value);
+                    } catch(e) {
+                        this.setState({result : {steemjsgui: e, parameter : pname}});
+                        return;
+                    }
                 } else {
-                    console.log("add param " + pname + "(" + this.state[pname] + ")");
                     params.push(this.state[pname]);
                 }
             }
         }
-        console.log("Execute with params " + JSON.stringify(params));
         
         method.execute.apply(method, params).then(
             result => {
+                if(!result) {
+                    result = {steemjsgui: "empty result from blockchain"};
+                }
                 this.setState({result : result, error : false, executing : false});
             },
             error => {
@@ -68,22 +78,22 @@ class ApiMethod extends Component {
         const target = event.target;
         const value = target.value;
         const name = target.name;
-        console.log("on change " + name + " = " + value );
         this.setState({
           [name]: value
         });
-        console.log("state1 = " + JSON.stringify(this.state));
     }
 
     onBlockchainChange(event) {
         const target = event.target;
         const value = target.value;
-        const name = target.name;
-        console.log("blockchain changed = " + value);
         this.setState({
           blockchain: value
         });
         this.onExecute();
+    }
+
+    componentDidMount () {
+      window.scrollTo(0, 0)
     }
 
   render() {
@@ -107,7 +117,7 @@ class ApiMethod extends Component {
     if(this.state.result) {
         result = <JSONPretty id="json-pretty" json={this.state.result}></JSONPretty>;
     } else if(this.state.executing) {
-        result = <img src={"/assets/images/golosa64.gif"}/>;
+        result = <img src={"/steemjs/assets/images/golosa64.gif"}/>;
     }
 
     if(!this.state.result && !this.state.executing && (!method.params || Object.keys(urlParams).length > 0)) {
@@ -122,10 +132,13 @@ class ApiMethod extends Component {
         
             <Header onChange = {this.onBlockchainChange} blockchain = {this.state.blockchain}/>
             <div className="ApiMethod-content">
+                <div className="ApiMethod-links">
+                    <Link to={"/api"}>Back to API List</Link>                    
+                </div>
                 <div className="ApiMethod-header">
                     <h2>{methodName}</h2>
                     <div className="ApiMethod-desc">
-                        {this.steemapi.methods[apiName][methodName].desc.ru}
+                        {getDesc(this.steemapi.methods[apiName][methodName].desc)}
                     </div>
                 </div>
                 <div className="ApiMethod-params">

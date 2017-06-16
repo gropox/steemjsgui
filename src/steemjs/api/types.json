@@ -633,7 +633,7 @@
             "desc": {
                 "en": "Returns data for specified accounts",
                 "ru": "Возращает данные по заданным аккаунтам",
-                "de": "",
+                "de": "Liefert Daten für eingegebene Benutzer zurück",
                 "es": ""
             },
             "params": {
@@ -642,7 +642,7 @@
                     "desc": {
                         "en": "accounts(strings) in nested array",
                         "ru": "имена аккаунтов (строки) в виде массива",
-                        "de": "",
+                        "de": "Kontennamen als ein Array",
                         "es": ""
                     }
                 }
