@@ -36,7 +36,7 @@ class ObjectParameter extends Component {
         error = <div className={"Parameter-error"}>{this.state.error}</div>;
     }
     
-    return (<div><textarea name={param.name} rows={25} cols={80} onChange={this.onChange}>{getValue(param.name)}</textarea>
+    return (<div><textarea name={param.name} rows={15} cols={60} onChange={this.onChange}>{getValue(param.name)}</textarea>
         {error}</div>);
   }
 }
