@@ -113,24 +113,35 @@ class SteemApi {
 
 SteemApi.Blockchain = {
     GOLOS : "GOLOS",
+    GOLOSTEST : "GOLOS Testnet",
     STEEMIT : "STEEMIT"
 }
 
 var BLOCKCHAIN = SteemApi.Blockchain.GOLOS;
 
 SteemApi.setBlockchain = function(bc) {
-    if(bc == SteemApi.Blockchain.STEEMIT) {
+    switch(bc) {
+    case SteemApi.Blockchain.STEEMIT :
         BLOCKCHAIN = SteemApi.Blockchain.STEEMIT;
         steem.api.stop();
         steem.config.set('websocket',"wss://steemd.steemit.com");
         steem.config.set('address_prefix',"STM");
         steem.config.set('chain_id','0000000000000000000000000000000000000000000000000000000000000000');        
-    } else {
+        break;
+    case SteemApi.Blockchain.GOLOS:
         BLOCKCHAIN = SteemApi.Blockchain.GOLOS;
         steem.api.stop();
         steem.config.set('websocket',"wss://ws.golos.io");
         steem.config.set('address_prefix',"GLS");
-        steem.config.set('chain_id','782a3039b478c839e4cb0c941ff4eaeb7df40bdd68bd441afd444b9da763de12');        
+        steem.config.set('chain_id','782a3039b478c839e4cb0c941ff4eaeb7df40bdd68bd441afd444b9da763de12');
+        break;
+    case SteemApi.Blockchain.GOLOSTEST:
+        BLOCKCHAIN = SteemApi.Blockchain.GOLOSTEST;
+        steem.api.stop();
+        steem.config.set('websocket',"wss://ws.testnet.golos.io");
+        steem.config.set('address_prefix',"GLS");
+        steem.config.set('chain_id','782a3039b478c839e4cb0c941ff4eaeb7df40bdd68bd441afd444b9da763de12');
+        break;
     }
 }
 

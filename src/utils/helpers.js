@@ -4,7 +4,11 @@ const language = (navigator.languages && navigator.languages[0]) ||
                      navigator.userLanguage;
 
 // Split locales with a region code
-const languageWithoutRegionCode = language.toLowerCase().split(/[_-]+/)[0];
+let languageWithoutRegionCode = language.toLowerCase().split(/[_-]+/)[0];
+let storedLang = localStorage.getItem('lang');
+if(storedLang) {
+    languageWithoutRegionCode = storedLang;
+}
 
 function getDesc(descriptions) {
     const desc = descriptions[languageWithoutRegionCode];
@@ -14,4 +18,16 @@ function getDesc(descriptions) {
     return desc;
 }
 
+
+function getLang() {
+    return languageWithoutRegionCode;
+}
+
+function setLang(lang) {
+    languageWithoutRegionCode = lang;
+    localStorage.setItem('lang', lang);
+}
+
 export {getDesc};
+export {setLang};
+export {getLang};

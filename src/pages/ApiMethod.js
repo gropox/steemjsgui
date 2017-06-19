@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import SteemApi from "../steemjs/api";
 import ApiMethodParameters from "../elements/ApiMethodParameters";
+
 import JSONPretty from 'react-json-pretty';
 import ApiMethodCss from "./ApiMethod.css";
 import Header from "../elements/Header";
 import queryString from "query-string";
 //import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
-import {getDesc} from "../utils/helpers";
+import {getDesc, setLang, getLang} from "../utils/helpers";
+
 
 class ApiMethod extends Component {
     
@@ -19,7 +21,21 @@ class ApiMethod extends Component {
       this.onExecute = this.onExecute.bind(this);
       this.onChange = this.onChange.bind(this);
       this.onBlockchainChange = this.onBlockchainChange.bind(this);
+      this.onSelectLang = this.onSelectLang.bind(this);
   }  
+    
+    onSelectLang(countryCode) {
+    
+        countryCode = countryCode.toLowerCase();
+        switch(countryCode) {
+            case "gb":
+                countryCode = "en";
+                break;
+        }
+        setLang(countryCode);
+        //console.log("countryCode = ", countryCode);
+        this.setState({lang:countryCode});
+    }
     
     onExecute(event) {
         if(event) {
@@ -73,7 +89,7 @@ class ApiMethod extends Component {
         this.setState({result : null, error : false, executing : true});
             
     }
-        
+    
     onChange(event) {
         const target = event.target;
         const value = target.value;
@@ -125,12 +141,14 @@ class ApiMethod extends Component {
     }
     
     let resultClass = this.state.error?"ApiMethod-error":"ApiMethod-result";
+
+
     
     return (
     <div className="ApiMethod">
         <form onSubmit={this.onExecute}>
         
-            <Header onChange = {this.onBlockchainChange} blockchain = {this.state.blockchain}/>
+            <Header onChange = {this.onBlockchainChange} onSelectLang = {this.onSelectLang} blockchain = {this.state.blockchain}/>
             <div className="ApiMethod-content">
                 <div className="ApiMethod-links">
                     <Link to={"/api"}>Back to API List</Link>                    
@@ -138,6 +156,7 @@ class ApiMethod extends Component {
                 <div className="ApiMethod-header">
                     <h2>{methodName}</h2>
                     <div className="ApiMethod-desc">
+
                         {getDesc(this.steemapi.methods[apiName][methodName].desc)}
                     </div>
                 </div>
