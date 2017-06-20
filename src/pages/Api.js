@@ -9,7 +9,8 @@ class Api extends Component {
   constructor() {
       super();
       this.steemapi = new SteemApi();
-      //this.steemapi.dump();
+      
+      //this.steemapi.dumpOperations();
   }  
     
   render() {

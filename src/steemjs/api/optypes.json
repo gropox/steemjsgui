@@ -1,0 +1,2292 @@
+{
+    "vote": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "voter": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "author": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "permlink": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "weight": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "comment": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "parent_author": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "parent_permlink": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "author": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "permlink": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "title": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "body": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "json_metadata": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "transfer": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "from": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "to": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "amount": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "memo": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "transfer_to_vesting": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "from": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "to": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "amount": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "withdraw_vesting": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "account": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "vesting_shares": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "limit_order_create": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "owner": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "orderid": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "amount_to_sell": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "min_to_receive": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "fill_or_kill": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "expiration": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "limit_order_cancel": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "owner": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "orderid": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "price": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "base": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "quote": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "feed_publish": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "publisher": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "exchange_rate": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "convert": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "owner": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "requestid": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "amount": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "account_create": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "fee": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "creator": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "new_account_name": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "owner": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "active": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "posting": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "memo_key": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "json_metadata": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "account_update": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "account": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "owner": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "active": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "posting": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "memo_key": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "json_metadata": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "witness_update": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "owner": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "url": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "block_signing_key": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "props": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "fee": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "account_witness_vote": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "account": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "witness": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "approve": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "account_witness_proxy": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "account": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "proxy": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "pow": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "worker": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "input": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "signature": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "work": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "custom": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "required_auths": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "id": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "data": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "delete_comment": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "author": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "permlink": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "custom_json": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "required_auths": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "required_posting_auths": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "id": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "json": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "comment_options": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "author": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "permlink": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "max_accepted_payout": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "percent_steem_dollars": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "allow_votes": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "allow_curation_rewards": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "extensions": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "set_withdraw_vesting_route": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "from_account": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "to_account": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "percent": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "auto_vest": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "limit_order_create2": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "owner": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "orderid": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "amount_to_sell": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "exchange_rate": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "fill_or_kill": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "expiration": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "challenge_authority": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "challenger": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "challenged": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "require_owner": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "prove_authority": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "challenged": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "require_owner": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "request_account_recovery": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "recovery_account": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "account_to_recover": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "new_owner_authority": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "extensions": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "recover_account": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "account_to_recover": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "new_owner_authority": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "recent_owner_authority": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "extensions": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "change_recovery_account": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "account_to_recover": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "new_recovery_account": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "extensions": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "escrow_transfer": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "from": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "to": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "agent": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "escrow_id": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "sbd_amount": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "steem_amount": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "fee": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "ratification_deadline": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "escrow_expiration": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "json_meta": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "escrow_dispute": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "from": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "to": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "agent": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "who": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "escrow_id": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "escrow_release": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "from": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "to": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "agent": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "who": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "receiver": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "escrow_id": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "sbd_amount": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "steem_amount": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "pow2": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "input": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "pow_summary": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "escrow_approve": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "from": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "to": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "agent": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "who": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "escrow_id": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "approve": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "transfer_to_savings": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "from": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "to": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "amount": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "memo": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "transfer_from_savings": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "from": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "request_id": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "to": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "amount": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "memo": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "cancel_transfer_from_savings": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "from": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "request_id": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "custom_binary": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "id": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "data": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "decline_voting_rights": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "account": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "decline": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "reset_account": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "reset_account": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "account_to_reset": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "new_owner_authority": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "set_reset_account": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "account": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "current_reset_account": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "reset_account": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "claim_reward_balance": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "account": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "reward_steem": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "reward_sbd": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "reward_vests": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "delegate_vesting_shares": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "delegator": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "delegatee": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "vesting_shares": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "account_create_with_delegation": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "fee": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "delegation": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "creator": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "new_account_name": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "owner": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "active": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "posting": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "memo_key": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "json_metadata": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "extensions": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "fill_convert_request": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "owner": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "requestid": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "amount_in": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "amount_out": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "comment_reward": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "author": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "permlink": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "payout": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "liquidity_reward": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "owner": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "payout": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "interest": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "owner": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "interest": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "fill_vesting_withdraw": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "from_account": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "to_account": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "withdrawn": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "deposited": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "fill_order": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "current_owner": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "current_orderid": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "current_pays": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "open_owner": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "open_orderid": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "open_pays": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    },
+    "fill_transfer_from_savings": {
+        "desc": {
+            "en": "",
+            "ru": "",
+            "de": "",
+            "es": ""
+        },
+        "params": {
+            "from": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "to": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "amount": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "request_id": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            },
+            "memo": {
+                "type": "String",
+                "desc": {
+                    "en": "",
+                    "ru": "",
+                    "de": "",
+                    "es": ""
+                }
+            }
+        }
+    }
+}
