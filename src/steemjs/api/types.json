@@ -128,6 +128,12 @@
                 "de": "",
                 "es": ""
             },
+            "desc2":{
+                "en": "### Parameters: <br> ** limit: 0 ** - the number of returned records can not be greater than 100. Default is 0 <br> ** select_authors: ['', '' ...] ** - array contains Authors names <br> ** select_tags: ['', '', ...] ** - Tag list, messages without these tags are filtered by ** filter_tags: ['', '', ...] * * - Tag list, messages with these tags are filtered by ### Optional parameters: <br> ** start_author: '' ** - the author's name from which to start looking for <br> ** start_permlink: '' ** - Link of the publication to start looking for <br> ** parent_author: '' ** - the author's name of the discussion that started the discussion <br> ** parent_permlink: '' ** - a permanent link to the parent discussion ",
+                "ru":"### Параметры:<br>**limit: 0** - количество возвращаемых записей не может быть больше 100. По умолчанию 0<br>**select_authors: ['',''...]** - массив содержит имена авторов<br>**select_tags: ['','',...]** - Список тегов, сообщения без этих тегов фильтруются<br>**filter_tags: ['','',...]** - Список тегов, сообщения с этими тегами фильтруются<br>### Не обязательные параметры:<br>**start_author: '' ** - имя автора с которого начинать искать<br>**start_permlink: '' ** - ссылка публикации с которой начинать искать<br>**parent_author: '' ** - имя автора стартовавшего дискуссию<br>**parent_permlink: '' ** - постоянная ссылка на родительскую дискуссию",
+                "de": "",
+                "es": "",
+            },
             "params": {
                 "query": {
                     "type": "Object",
