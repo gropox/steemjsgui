@@ -43,6 +43,20 @@
     padding: 5px;
 }
 
+.ApiMethod-button {
+    padding: 5px;
+    background-color: rgb(63, 164, 231); /* Green */
+    border: 1px solid rgb(0, 0, 0);
+    color: white;
+    padding: 5px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
 .ApiMethod-result {
     padding: 5px;
     border: solid 1px;
@@ -58,5 +72,9 @@
 }
 
 .ApiMethod-content {
-    margin-top : 150px;
+    margin-top : 10px;
+}
+
+.ApiMethod-key {
+    padding: 5px;
 }

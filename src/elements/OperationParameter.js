@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import types from "../steemjs/api/types.json";
 import ParameterCss from "./Parameter.css";
-import ArrayParameter from "./ArrayParameter.js";
+import AuthorityParameter from "./AuthorityParameter.js";
 import ObjectParameter from "./ObjectParameter.js";
+import PublicKey from "./PublicKey.js";
 import {getDesc} from "../utils/helpers";
 
-class Parameter extends Component {
+class OperationParameter extends Component {
     
   constructor() {
       super();
@@ -24,13 +25,16 @@ class Parameter extends Component {
     let param = this.props.param;
 
     let input = null;
-    console.log("Parameter " + param.name + " of type [" + param.type + "]");
-    switch(param.type) {
-        case "Array" :
-            input = <ArrayParameter paramValues = {paramValues} onChange={this.props.onChange} param = {param} getValue = {getValue}/>;
-            break;
+    console.log("Parameter " + param.name + " of type [" + param.getType() + "]");
+    switch(param.getType()) {
         case "Object" :
             input = <ObjectParameter paramValues = {paramValues} onChange={this.props.onChange} param = {param} getValue = {getValue}/>;
+            break;
+        case "authority" :
+            input = <AuthorityParameter paramValues = {paramValues} onChange={this.props.onChange} param = {param} getValue = {getValue}/>;
+            break;
+        case "public_key" :
+            input = <PublicKey paramValues = {paramValues} onChange={this.props.onChange} param = {param} />;
             break;
         default:
             input = <input type="text" name={param.name} onChange={this.props.onChange} value = {getValue(param.name)}/>;
@@ -49,4 +53,4 @@ class Parameter extends Component {
   }
 }
 
-export default Parameter;
+export default OperationParameter;

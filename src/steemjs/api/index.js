@@ -1,9 +1,12 @@
-import steem from "steem"
-import methods from 'steem/lib/api/methods'
-import operations from 'steem/lib/broadcast/operations'
-import { camelCase } from '../steem/util';
+import steem from "golos-js"
+import methods from 'golos-js/lib/api/methods'
+import operations from 'golos-js/lib/broadcast/operations'
+import steemoperations from 'golos-js/lib/auth/serializer/src/operations'
+import typeDefs from 'golos-js/lib/auth/serializer/src/types'
+import { camelCase } from 'golos-js/lib/utils';
 import types from "./types";
 import optypes from "./optypes";
+console.log("steem_operations", steemoperations);
 
 
 class OpParam {
@@ -12,21 +15,75 @@ class OpParam {
         this.name = name;
 
         this.type = "String";
-        this.desc = {en : "", ru : "", de : "", es : ""};
-        
-        if(optypes[op] 
-            && optypes[op].params 
+        this.desc = { en: "", ru: "", de: "", es: "" };
+
+        if (optypes[op]
+            && optypes[op].params
             && optypes[op].params[name]) {
             let meta = optypes[op].params[name];
-            if(meta.type) {
+            if (meta.type) {
                 this.type = meta.type;
             }
-            if(meta.desc) {
-                for(let tr of Object.keys(meta.desc)) {
+            if (meta.desc) {
+                for (let tr of Object.keys(meta.desc)) {
                     this.desc[tr] = meta.desc[tr];
                 }
             }
-        } 
+        }
+    }
+
+    getType() {
+        return this.getTypeDef(this.getTypeObject());
+    }
+
+    convertTyped(val) {
+        let type = this.getType();
+        console.log("1perameter " + this.name + " has type ", type);
+        let ret = val;
+        switch (type) {
+            case "uint16":
+            case "uint32":
+            case "uint64":
+            case "int16":
+                ret = parseInt(val);
+                if (isNaN(ret)) {
+                    throw this.name + " is not a number [" + val + "]";
+                }
+                break;
+            case "asset":
+                //check
+                if (! /^[0-9]+\.?[0-9]* [A-Za-z0-9]+$/.test(ret)) {
+                    throw this.name + ": Expecting amount like '99.000 SYMBOL', instead got '" + val + "'";
+                }
+                break;
+            case "public_key":
+                const prefix = steem.config.get('address_prefix');
+                if (!ret.match("^" + prefix + ".*$")) {
+                    throw this.name + ": Public key has to start with " + prefix + " instead got '" + val + "'";
+                }
+                break;
+        }
+        return ret;
+    }
+
+
+
+    getTypeDef(type) {
+        console.log("getTypeDef of " + JSON.stringify(type));
+        if (typeof type.operation_name != "undefined") {
+            return type.operation_name;
+        }
+        for (let td of Object.keys(typeDefs)) {
+            if (typeDefs[td] == type) {
+                return td;
+            }
+        }
+        return "unknown";
+    }
+
+    getTypeObject() {
+        let opSer = steemoperations[this.op];
+        return opSer.types[this.name];
     }
 }
 
@@ -38,51 +95,63 @@ class Param {
         this.name = name;
 
         this.type = "String";
-        this.desc = {en : "", ru : "", de : "", es : ""};
-        
-        if(types[api] 
-            && types[api][method] 
-            && types[api][method].params 
+        this.desc = { en: "", ru: "", de: "", es: "" };
+
+        if (types[api]
+            && types[api][method]
+            && types[api][method].params
             && types[api][method].params[name]) {
             let meta = types[api][method].params[name];
-            if(meta.type) {
+            if (meta.type) {
                 this.type = meta.type;
             }
-            if(meta.desc) {
-                for(let tr of Object.keys(meta.desc)) {
+            if (meta.desc) {
+                for (let tr of Object.keys(meta.desc)) {
                     this.desc[tr] = meta.desc[tr];
                 }
             }
-        } 
+        }
     }
 }
 
 class Operation {
-    
-    constructor(name, params) {
+
+    constructor(name, params, roles) {
         this.name = name;
         this.paramNames = params;
         this.params = null;
-        if(params && params.length > 0) {
+        this.roles = roles;
+        if (params && params.length > 0) {
             this.params = {};
-            for(let p of params) {
+            for (let p of params) {
                 this.params[p] = new OpParam(name, p);
             }
         }
-        this.desc = {en : "", ru : "", de : "", es : ""};
-        if(optypes[name] 
+        this.desc = { en: "", ru: "", de: "", es: "" };
+        if (optypes[name]
             && optypes[name].desc) {
-            for(let tr of Object.keys(optypes[name].desc)) {
+            for (let tr of Object.keys(optypes[name].desc)) {
                 this.desc[tr] = optypes[name].desc[tr];
             }
         }
     }
-    
+
+    convert(args) {
+        for (let i = 0; i < this.paramNames.length; i++) {
+            let pname = this.paramNames[i];
+            args[i] = this.params[pname].convertTyped(args[i]);
+        }
+
+    }
+
     execute() {
         var camelName = camelCase(this.name);
-        var args = Array.prototype.splice.call(arguments, 0);
-        //console.log("Execute " + camelName + "Async(" + JSON.stringify(args) + ")" );
-        return steem.api[camelName + "Async"].apply(steem.api, args);
+        var params = [arguments[0]];
+        var args = Array.prototype.splice.call(arguments, 1);
+        this.convert(args);
+        params = params.concat(args);
+        console.log("Execute " + camelName + "Async(" + JSON.stringify(params) + ")");
+        return steem.broadcast[camelName + "Async"].apply(steem.broadcast, params);
         //return steem.api.getDynamicGlobalPropertiesAsync();
     }
 }
@@ -90,28 +159,28 @@ class Operation {
 
 
 class Method {
-    
+
     constructor(api, name, params) {
         this.api = api;
         this.name = name;
         this.paramNames = params;
         this.params = null;
-        if(params && params.length > 0) {
+        if (params && params.length > 0) {
             this.params = {};
-            for(let p of params) {
+            for (let p of params) {
                 this.params[p] = new Param(api, name, p);
             }
         }
-        this.desc = {en : "", ru : "", de : "", es : ""};
-        if(types[api] 
-            && types[api][name] 
+        this.desc = { en: "", ru: "", de: "", es: "" };
+        if (types[api]
+            && types[api][name]
             && types[api][name].desc) {
-            for(let tr of Object.keys(types[api][name].desc)) {
+            for (let tr of Object.keys(types[api][name].desc)) {
                 this.desc[tr] = types[api][name].desc[tr];
             }
         }
     }
-    
+
     execute() {
         var camelName = camelCase(this.name);
         var args = Array.prototype.splice.call(arguments, 0);
@@ -124,50 +193,50 @@ class Method {
 class SteemApi {
 
     constructor() {
-    
+
         this.methods = {};
         this.operations = {};
         this.importMethods();
         this.importOperations();
     }
-    
+
     importMethods() {
-        for(let m of methods) {
-            if(!this.methods[m.api]) {
+        for (let m of methods) {
+            if (!this.methods[m.api]) {
                 this.methods[m.api] = {};
             }
             this.methods[m.api][m.method] = new Method(m.api, m.method, m.params);
         }
     }
-    
+
     importOperations() {
-        for(let op of operations) {
-            this.operations[op.operation] = new Operation(op.operation, op.params);
+        for (let op of operations) {
+            this.operations[op.operation] = new Operation(op.operation, op.params, op.roles);
         }
     }
 
     dumpMethods() {
         let dump = {};
-        for(let api of Object.keys(this.methods)) {
-            if(!dump[api]) {
+        for (let api of Object.keys(this.methods)) {
+            if (!dump[api]) {
                 dump[api] = {};
             }
-            for(let mname of Object.keys(this.methods[api])) {
+            for (let mname of Object.keys(this.methods[api])) {
                 let m = this.methods[api][mname];
-                let mdump = {desc :  {en : "", ru : "", de : "", es : ""}};
-                if(m.params) {
+                let mdump = { desc: { en: "", ru: "", de: "", es: "" } };
+                if (m.params) {
                     mdump.params = {};
-                    for(let pname of Object.keys(m.params)) {
+                    for (let pname of Object.keys(m.params)) {
                         let p = m.params[pname];
                         mdump.params[p.name] = {
-                            type : p.type,
-                            desc : {en : "", ru : "", de : "", es : ""}
+                            type: p.type,
+                            desc: { en: "", ru: "", de: "", es: "" }
                         }
-                        for(let tr of Object.keys(p.desc)) {
+                        for (let tr of Object.keys(p.desc)) {
                             mdump.params[p.name].desc[tr] = p.desc[tr];
                         }
                     }
-                    for(let tr of Object.keys(m.desc)) {
+                    for (let tr of Object.keys(m.desc)) {
                         mdump.desc[tr] = m.desc[tr];
                     }
                 }
@@ -175,25 +244,25 @@ class SteemApi {
             }
         }
     }
-    
+
     dumpOperations() {
         let dump = {};
-        for(let opName of Object.keys(this.operations)) {
+        for (let opName of Object.keys(this.operations)) {
             let op = this.operations[opName];
-            let opdump = {desc :  {en : "", ru : "", de : "", es : ""}};
-            if(op.params) {
+            let opdump = { desc: { en: "", ru: "", de: "", es: "" } };
+            if (op.params) {
                 opdump.params = {};
-                for(let pname of Object.keys(op.params)) {
+                for (let pname of Object.keys(op.params)) {
                     let p = op.params[pname];
                     opdump.params[p.name] = {
-                        type : p.type,
-                        desc : {en : "", ru : "", de : "", es : ""}
+                        type: p.type,
+                        desc: { en: "", ru: "", de: "", es: "" }
                     }
-                    for(let tr of Object.keys(p.desc)) {
+                    for (let tr of Object.keys(p.desc)) {
                         opdump.params[p.name].desc[tr] = p.desc[tr];
                     }
                 }
-                for(let tr of Object.keys(op.desc)) {
+                for (let tr of Object.keys(op.desc)) {
                     opdump.desc[tr] = op.desc[tr];
                 }
             }
@@ -201,48 +270,55 @@ class SteemApi {
         }
         console.log(JSON.stringify(dump, null, 4));
     }
-    
+
 }
 
 
 SteemApi.Blockchain = {
-    GOLOS : "GOLOS",
-    GOLOSTEST : "GOLOS Testnet",
-    STEEMIT : "STEEMIT"
+    GOLOS: "Golos.io",
+    VIK: "Vik",
+    GOLOSTestnet: "Golos Testnet",
+
 }
 
-var BLOCKCHAIN = SteemApi.Blockchain.GOLOS;
-
-SteemApi.setBlockchain = function(bc) {
-    switch(bc) {
-    case SteemApi.Blockchain.STEEMIT :
-        BLOCKCHAIN = SteemApi.Blockchain.STEEMIT;
-        steem.api.stop();
-        steem.config.set('websocket',"wss://steemd.steemit.com");
-        steem.config.set('address_prefix',"STM");
-        steem.config.set('chain_id','0000000000000000000000000000000000000000000000000000000000000000');        
-        break;
-    case SteemApi.Blockchain.GOLOS:
-        BLOCKCHAIN = SteemApi.Blockchain.GOLOS;
-        steem.api.stop();
-        steem.config.set('websocket',"wss://ws.golos.io");
-        steem.config.set('address_prefix',"GLS");
-        steem.config.set('chain_id','782a3039b478c839e4cb0c941ff4eaeb7df40bdd68bd441afd444b9da763de12');
-        break;
-    case SteemApi.Blockchain.GOLOSTEST:
-        BLOCKCHAIN = SteemApi.Blockchain.GOLOSTEST;
-        steem.api.stop();
-        steem.config.set('websocket',"wss://ws.testnet.golos.io");
-        steem.config.set('address_prefix',"GLS");
-        steem.config.set('chain_id','782a3039b478c839e4cb0c941ff4eaeb7df40bdd68bd441afd444b9da763de12');
-        break;
+SteemApi.getDefaults = (blockchain) => {
+    console.log("get defaults for", blockchain);
+    switch (blockchain) {
+        case SteemApi.Blockchain.GOLOS:
+            return {
+                ws : "wss://ws.golos.io",
+                prefix : "GLS",
+                chain_id : "782a3039b478c839e4cb0c941ff4eaeb7df40bdd68bd441afd444b9da763de12"
+            }    
+            break;    
+        case SteemApi.Blockchain.VIK:
+            return {
+                ws: "wss://api.golos.cf",
+                prefix: "GLS",
+                chain_id: "782a3039b478c839e4cb0c941ff4eaeb7df40bdd68bd441afd444b9da763de12"
+            }    
+            break;    
+        case SteemApi.Blockchain.GOLOSTestnet:
+            return {
+                ws : "wss://ws.testnet.golos.io",
+                prefix : "GLS",
+                chain_id : "5876894a41e6361bde2e73278f07340f2eb8b41c2facd29099de9deef6cdb679"
+            }    
+            break;    
     }
+
 }
 
-SteemApi.setBlockchain(SteemApi.Blockchain.GOLOS);
 
-SteemApi.getBlockchain = function() {
-    return BLOCKCHAIN;
+SteemApi.setBlockchain = function (
+    ws = "wss://ws.golos.io",
+    prefix = "GLS",
+    chain_id = "782a3039b478c839e4cb0c941ff4eaeb7df40bdd68bd441afd444b9da763de12"
+) {
+    steem.api.stop();
+    steem.config.set('websocket', ws);
+    steem.config.set('address_prefix', prefix);
+    steem.config.set('chain_id', chain_id);
 }
 
 export default SteemApi;

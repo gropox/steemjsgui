@@ -1,11 +1,7 @@
 .Header-body {
     background : #6d9eed;
-    height : 100px;
+    height : 200px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    padding: 10px;
-    position: fixed;
-    width: 100%; 
-    top: 0;
 }
 
 .Header-title {
@@ -22,5 +18,11 @@
     right : 0;
     position: fixed;
     top: 0;
+}
+
+.Header-selector {
+}
+
+.Header-navigation {
 }
 

@@ -2,10 +2,15 @@
   "name": "steemjsgui",
   "version": "0.1.0",
   "private": true,
-  "homepage":"/steemjs",
+  "homepage": "/steemjs",
   "dependencies": {
+    "golos-js": "^0.6.2",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "react-flags-select": "^1.1.0",
+    "react-json-pretty": "^1.6.3",
+    "react-layout-components": "^3.0.6",
+    "react-router-dom": "^4.1.2"
   },
   "devDependencies": {
     "react-scripts": "1.0.7"
