@@ -1,146 +1,5 @@
 {
-    "database_api": {
-        
-        "get_assets": {
-            "desc" : {
-                "en" : "",
-                "ru" : "",
-                "de" : "",
-                "es" : ""
-            },
-            "params": {
-                "assetSymbols": {
-                    "type": "Array",
-                    "desc": {
-                        "en": "",
-                        "ru": "",
-                        "de": "",
-                        "es": ""
-                    }
-                }
-            }
-        },
-        "get_assets_dynamic_data": {
-            "desc" : {
-                "en" : "",
-                "ru" : "",
-                "de" : "",
-                "es" : ""
-            },
-            "params": {
-                "assetSymbols": {
-                    "type": "Array",
-                    "desc": {
-                        "en": "",
-                        "ru": "",
-                        "de": "",
-                        "es": ""
-                    }
-                }
-            }
-        },
-        "get_account_balances": {
-            "desc" : {
-                "en" : "",
-                "ru" : "",
-                "de" : "",
-                "es" : ""
-            },
-            "params": {
-                "name": {
-                    "type": "String",
-                    "desc": {
-                        "en": "",
-                        "ru": "",
-                        "de": "",
-                        "es": ""
-                    }
-                },
-                "assets": {
-                    "type": "Array",
-                    "desc": {
-                        "en": "",
-                        "ru": "",
-                        "de": "",
-                        "es": ""
-                    }
-                }
-            }
-        },
-        "set_subscribe_callback": {
-            "desc": {
-                "en": "",
-                "ru": "",
-                "de": "",
-                "es": ""
-            },
-            "params": {
-                "callback": {
-                    "type": "String",
-                    "desc": {
-                        "en": "",
-                        "ru": "",
-                        "de": "",
-                        "es": ""
-                    }
-                },
-                "clearFilter": {
-                    "type": "Boolean",
-                    "desc": {
-                        "en": "",
-                        "ru": "",
-                        "de": "",
-                        "es": ""
-                    }
-                }
-            }
-        },
-        "set_pending_transaction_callback": {
-            "desc": {
-                "en": "",
-                "ru": "",
-                "de": "",
-                "es": ""
-            },
-            "params": {
-                "cb": {
-                    "type": "String",
-                    "desc": {
-                        "en": "",
-                        "ru": "",
-                        "de": "",
-                        "es": ""
-                    }
-                }
-            }
-        },
-        "set_block_applied_callback": {
-            "desc": {
-                "en": "",
-                "ru": "",
-                "de": "",
-                "es": ""
-            },
-            "params": {
-                "cb": {
-                    "type": "String",
-                    "desc": {
-                        "en": "",
-                        "ru": "",
-                        "de": "",
-                        "es": ""
-                    }
-                }
-            }
-        },
-        "cancel_all_subscriptions": {
-            "desc": {
-                "en": "",
-                "ru": "",
-                "de": "",
-                "es": ""
-            }
-        },
+    "tags": {
         "get_trending_tags": {
             "desc": {
                 "en": "Returns a list of tags (tags) that include word combinations",
@@ -440,7 +299,10 @@
                     }
                 }
             }
-        },
+        }
+        
+    },
+    "database_api": {
         "get_block_header": {
             "desc": {
                 "en": "Returns block for given number",
@@ -710,7 +572,7 @@
                 "es": ""
             },
             "params": {
-                "names": {
+                "accountNames": {
                     "type": "Array",
                     "desc": {
                         "en": "accounts(strings) in nested array",
@@ -1011,44 +873,7 @@
                 }
             }
         },
-        "get_order_book": {
-            "desc": {
-                "en": "Displays a list of applications on the internal exchange for the purchase and sale of the network",
-                "ru": "Отображает список заявок на внутренней бирже на покупку и продажу в сети",
-                "de": "",
-                "es": ""
-            },
-            "params": {
-                "limit": {
-                    "type": "Integer",
-                    "desc": {
-                        "en": "number of results",
-                        "ru": "количество результатов",
-                        "de": "",
-                        "es": ""
-                    }
-                }
-            }
-        },
-        "get_open_orders": {
-            "desc": {
-                "en": "Displays a list of orders on the internal exchange for the purchase and sale on the network for the specified user.",
-                "ru": "Отображает список заявок на внутренней бирже на покупку и продажу в сети для указанного пользователя.",
-                "de": "",
-                "es": ""
-            },
-            "params": {
-                "owner": {
-                    "type": "String",
-                    "desc": {
-                        "en": "username",
-                        "ru": "имя пользователя",
-                        "de": "",
-                        "es": ""
-                    }
-                }
-            }
-        },
+
         "get_liquidity_queue": {
             "desc": {
                 "en": "Gets the current liquidity reward queue.",
@@ -1393,124 +1218,6 @@
                         "es": ""
                     }
                 }
-            }
-        },
-        "get_witnesses": {
-            "desc": {
-                "en": "Displays delegate data according to the specified ID",
-                "ru": "Отображает данные о делегатах в соответствии с заданными ID",
-                "de": "",
-                "es": ""
-            },
-            "params": {
-                "witnessIds": {
-                    "type": "Array",
-                    "desc": {
-                        "en": "id",
-                        "ru": "id",
-                        "de": "",
-                        "es": ""
-                    }
-                }
-            }
-        },
-        "get_witness_by_account": {
-            "desc": {
-                "en": "Displays data about the delegate (if it is) according to the data from the request",
-                "ru": "Отображает данные о делегате (если он им является) в соответствии с данными из запроса",
-                "de": "",
-                "es": ""
-            },
-            "params": {
-                "accountName": {
-                    "type": "String",
-                    "desc": {
-                        "en": "username",
-                        "ru": "имя пользователя",
-                        "de": "",
-                        "es": ""
-                    }
-                }
-            }
-        },
-        "get_witnesses_by_vote": {
-            "desc": {
-                "en": "Displays a limited list of delegates approving the vote.",
-                "ru": "Отображает ограниченный список делегатов одобряющих голосование.",
-                "de": "",
-                "es": ""
-            },
-            "params": {
-                "from": {
-                    "type": "String",
-                    "desc": {
-                        "en": "username (If the first parameter is empty, the leading delegates are displayed, if the first parameter is specified, the list starts with the specified delegate.)",
-                        "ru": "имя пользователя (Если первый параметр пуст то отображаются ведущие делегаты, если первый параметр указан то список начинается с указанного делегата.)",
-                        "de": "",
-                        "es": ""
-                    }
-                },
-                "limit": {
-                    "type": "Integer",
-                    "desc": {
-                        "en": "number of results",
-                        "ru": "количество результатов",
-                        "de": "",
-                        "es": ""
-                    }
-                }
-            }
-        },
-        "lookup_witness_accounts": {
-            "desc": {
-                "en": "Displays a limited list of users who have announced their intention to work as a delegate.",
-                "ru": "Отображает ограниченный список пользователей, которые объявили о своем намерении работать в качестве делегата.",
-                "de": "",
-                "es": ""
-            },
-            "params": {
-                "lowerBoundName": {
-                    "type": "String",
-                    "desc": {
-                        "en": "search pattern",
-                        "ru": "шаблон поиска",
-                        "de": "",
-                        "es": ""
-                    }
-                },
-                "limit": {
-                    "type": "Integer",
-                    "desc": {
-                        "en": "number of results",
-                        "ru": "количество результатов",
-                        "de": "",
-                        "es": ""
-                    }
-                }
-            }
-        },
-        "get_witness_count": {
-            "desc": {
-                "en": "Displays the number of delegates.",
-                "ru": "Отображает количество делегатов.",
-                "de": "",
-                "es": ""
-            }
-        },
-        "get_active_witnesses": {
-            "desc": {
-                "en": "Displays a list of all active delegates.",
-                "ru": "Отображает список всех активных делегатов.",
-                "de": "",
-                "es": ""
-            }
-        },
-        "get_miner_queue": {
-            "desc": {
-                "en": "Creates a list of the miners waiting to enter the DPOW chain to create the block.",
-                "ru": "Создает список майнеров, ожидающих попасть в DPOW цепочку, чтобы создать блок.",
-                "de": "",
-                "es": ""
             }
         },
         "get_reward_fund": {
@@ -2090,7 +1797,26 @@
             }
         }
     },
-    "market_history_api": {
+    "market_history": {
+                    "get_open_orders": {
+            "desc": {
+                "en": "Displays a list of orders on the internal exchange for the purchase and sale on the network for the specified user.",
+                "ru": "Отображает список заявок на внутренней бирже на покупку и продажу в сети для указанного пользователя.",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "owner": {
+                    "type": "String",
+                    "desc": {
+                        "en": "username",
+                        "ru": "имя пользователя",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },        
         "get_ticker": {
             "desc": {
                 "en": "Returns the market ticker for the internal market",
@@ -2223,6 +1949,126 @@
             "desc": {
                 "en": "Returns the bucket seconds being tracked by the plugin",
                 "ru": "Возвращает размер секунд стакана(среза), отслеживаемых плагином.",
+                "de": "",
+                "es": ""
+            }
+        }
+    },
+    "witness_api" : {
+        "get_witnesses": {
+            "desc": {
+                "en": "Displays delegate data according to the specified ID",
+                "ru": "Отображает данные о делегатах в соответствии с заданными ID",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "witnessIds": {
+                    "type": "Array",
+                    "desc": {
+                        "en": "id",
+                        "ru": "id",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_witness_by_account": {
+            "desc": {
+                "en": "Displays data about the delegate (if it is) according to the data from the request",
+                "ru": "Отображает данные о делегате (если он им является) в соответствии с данными из запроса",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "accountName": {
+                    "type": "String",
+                    "desc": {
+                        "en": "username",
+                        "ru": "имя пользователя",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_witnesses_by_vote": {
+            "desc": {
+                "en": "Displays a limited list of delegates approving the vote.",
+                "ru": "Отображает ограниченный список делегатов одобряющих голосование.",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "from": {
+                    "type": "String",
+                    "desc": {
+                        "en": "username (If the first parameter is empty, the leading delegates are displayed, if the first parameter is specified, the list starts with the specified delegate.)",
+                        "ru": "имя пользователя (Если первый параметр пуст то отображаются ведущие делегаты, если первый параметр указан то список начинается с указанного делегата.)",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "limit": {
+                    "type": "Integer",
+                    "desc": {
+                        "en": "number of results",
+                        "ru": "количество результатов",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "lookup_witness_accounts": {
+            "desc": {
+                "en": "Displays a limited list of users who have announced their intention to work as a delegate.",
+                "ru": "Отображает ограниченный список пользователей, которые объявили о своем намерении работать в качестве делегата.",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "lowerBoundName": {
+                    "type": "String",
+                    "desc": {
+                        "en": "search pattern",
+                        "ru": "шаблон поиска",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "limit": {
+                    "type": "Integer",
+                    "desc": {
+                        "en": "number of results",
+                        "ru": "количество результатов",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        },
+        "get_witness_count": {
+            "desc": {
+                "en": "Displays the number of delegates.",
+                "ru": "Отображает количество делегатов.",
+                "de": "",
+                "es": ""
+            }
+        },
+        "get_active_witnesses": {
+            "desc": {
+                "en": "Displays a list of all active delegates.",
+                "ru": "Отображает список всех активных делегатов.",
+                "de": "",
+                "es": ""
+            }
+        },
+        "get_miner_queue": {
+            "desc": {
+                "en": "Creates a list of the miners waiting to enter the DPOW chain to create the block.",
+                "ru": "Создает список майнеров, ожидающих попасть в DPOW цепочку, чтобы создать блок.",
                 "de": "",
                 "es": ""
             }
