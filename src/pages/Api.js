@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import SteemApi from "../steemjs/api";
 import Apis from "../elements/Apis";
 import Header from "../elements/Header";
-import ApiCss from "./Api.css";
+import pck from "golos-js/package.json"
+import "./Api.css";
 
 class Api extends Component {
     
@@ -17,9 +18,9 @@ class Api extends Component {
     document.title = "Steem-JS API";
     return (
     <div className="Api-body">
-        <Header />
+        <Header title="API" {...this.props} />
         <div className="Api-content">
-            <h2>Steem API</h2>
+            <h2>Golos API {pck.version}</h2>
             <div className="Api-list"><Apis apis = {this.steemapi.methods}/></div>
             <div className="Api-help"></div>
         </div>

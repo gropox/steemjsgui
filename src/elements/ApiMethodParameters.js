@@ -21,9 +21,7 @@ class ApiMethodParameters extends Component {
         
         return (
         <div>
-            <table>
-                {methodParamerItems}
-            </table>
+            {methodParamerItems}
         </div>
         );
     } else {

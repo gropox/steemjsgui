@@ -1,4 +1,52 @@
 {
+    "account_history" : {
+        "get_account_history": {
+            "desc": {
+                "en": "The history of all user actions on the network in the form of transactions. If from = -1, then are last {limit+1} history elements are shown. Parameter limit should be less or equals {from} (except from = -1). This is because elements preceding {from} are shown. ",
+                "ru": "История всех действий пользователя в сети в виде транзакций. При from = -1 будут показаны последние {limit+1} элементов истории. Параметр limit не должен превышать from (исключение from = -1), так как показываются предшествующие {from} элементы истории. limit, from и query опциональные параметры. Примеры query {\"select_ops\":[\"transfer\"]} или {\"filter_ops\":[\"transfer\"]}, {\"direction\":\"sender\"} или {\"direction\":\"receiver\"}",
+                "de": "",
+                "es": ""
+            },
+            "params": {
+                "account": {
+                    "type": "String",
+                    "desc": {
+                        "en": "username",
+                        "ru": "имя пользователя",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "from=-1": {
+                    "type": "Integer",
+                    "desc": {
+                        "en": "",
+                        "ru": "",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "limit=100": {
+                    "type": "Integer",
+                    "desc": {
+                        "en": "number of results",
+                        "ru": "колличество результатов",
+                        "de": "",
+                        "es": ""
+                    }
+                },
+                "query={}": {
+                    "type": "Object",
+                    "desc": {
+                        "en": "Filter",
+                        "ru": "Фильтр",
+                        "de": "",
+                        "es": ""
+                    }
+                }
+            }
+        }
+    },
     "tags": {
         "get_trending_tags": {
             "desc": {
@@ -670,43 +718,6 @@
                     "desc": {
                         "en": "username",
                         "ru": "имя пользователя",
-                        "de": "",
-                        "es": ""
-                    }
-                }
-            }
-        },
-        "get_account_history": {
-            "desc": {
-                "en": "The history of all user actions on the network in the form of transactions. If from = -1, then are last {limit+1} history elements are shown. Parameter limit should be less or equals {from} (except from = -1). This is because elements preceding {from} are shown. ",
-                "ru": "История всех действий пользователя в сети в виде транзакций. При from = -1 будут показаны последние {limit+1} элементов истории. Параметр limit не должен превышать from (исключение from = -1), так как показываются предшествующие {from} элементы истории.",
-                "de": "",
-                "es": ""
-            },
-            "params": {
-                "account": {
-                    "type": "String",
-                    "desc": {
-                        "en": "username",
-                        "ru": "имя пользователя",
-                        "de": "",
-                        "es": ""
-                    }
-                },
-                "from": {
-                    "type": "Integer",
-                    "desc": {
-                        "en": "",
-                        "ru": "",
-                        "de": "",
-                        "es": ""
-                    }
-                },
-                "limit": {
-                    "type": "Integer",
-                    "desc": {
-                        "en": "number of results",
-                        "ru": "колличество результатов",
                         "de": "",
                         "es": ""
                     }

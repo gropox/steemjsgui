@@ -4,21 +4,24 @@
   "private": true,
   "homepage": "/steemjs",
   "dependencies": {
-    "golos-js": "^0.7.0",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
+    "@material-ui/core": "^3.0.1",
+    "@material-ui/icons": "^3.0.1",
+    "golos-js": "^0.7.3",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
     "react-flags-select": "^1.1.0",
     "react-json-pretty": "^1.6.3",
     "react-layout-components": "^3.0.6",
     "react-router-dom": "^4.1.2"
   },
   "devDependencies": {
-    "react-scripts": "1.0.7"
+    "react-scripts": "^1.1.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "scp -r build/* golosbot@ropox.tools:/var/www/html/steemjs/"
   }
 }

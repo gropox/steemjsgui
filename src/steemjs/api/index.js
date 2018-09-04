@@ -6,7 +6,7 @@ import typeDefs from 'golos-js/lib/auth/serializer/src/types'
 import { camelCase } from 'golos-js/lib/utils';
 import types from "./types";
 import optypes from "./optypes";
-console.log("steem_operations", steemoperations);
+//console.log("steem_operations", steemoperations);
 
 
 class OpParam {
@@ -38,7 +38,7 @@ class OpParam {
 
     convertTyped(val) {
         let type = this.getType();
-        console.log("1perameter " + this.name + " has type ", type);
+        //console.log("1perameter " + this.name + " has type ", type);
         let ret = val;
         switch (type) {
             case "uint16":
@@ -69,7 +69,7 @@ class OpParam {
 
 
     getTypeDef(type) {
-        console.log("getTypeDef of " + JSON.stringify(type));
+        //console.log("getTypeDef of " + JSON.stringify(type));
         if (typeof type.operation_name != "undefined") {
             return type.operation_name;
         }
@@ -92,16 +92,20 @@ class Param {
     constructor(api, method, name) {
         this.api = api;
         this.method = method;
+        const [disp_name, pdefault] = name.split("=");
+
         this.name = name;
+        this.disp_name = disp_name;
+        this.default = pdefault;
 
         this.type = "String";
         this.desc = { en: "", ru: "", de: "", es: "" };
-
         if (types[api]
             && types[api][method]
             && types[api][method].params
-            && types[api][method].params[name]) {
-            let meta = types[api][method].params[name];
+            && types[api][method].params[this.name]) {
+            let meta = types[api][method].params[this.name];
+            //console.log("meta",meta);
             if (meta.type) {
                 this.type = meta.type;
             }
@@ -287,22 +291,16 @@ SteemApi.getDefaults = (blockchain) => {
         case SteemApi.Blockchain.GOLOS:
             return {
                 ws : "wss://ws.golos.io",
-                prefix : "GLS",
-                chain_id : "782a3039b478c839e4cb0c941ff4eaeb7df40bdd68bd441afd444b9da763de12"
             }    
             break;    
         case SteemApi.Blockchain.VIK:
             return {
                 ws: "wss://api.golos.cf",
-                prefix: "GLS",
-                chain_id: "782a3039b478c839e4cb0c941ff4eaeb7df40bdd68bd441afd444b9da763de12"
             }    
             break;    
         case SteemApi.Blockchain.GOLOSTestnet:
             return {
                 ws : "wss://ws.testnet.golos.io",
-                prefix : "GLS",
-                chain_id : "5876894a41e6361bde2e73278f07340f2eb8b41c2facd29099de9deef6cdb679"
             }    
             break;    
     }
@@ -312,13 +310,10 @@ SteemApi.getDefaults = (blockchain) => {
 
 SteemApi.setBlockchain = function (
     ws = "wss://ws.golos.io",
-    prefix = "GLS",
-    chain_id = "782a3039b478c839e4cb0c941ff4eaeb7df40bdd68bd441afd444b9da763de12"
 ) {
     steem.api.stop();
     steem.config.set('websocket', ws);
-    steem.config.set('address_prefix', prefix);
-    steem.config.set('chain_id', chain_id);
+
 }
 
 export default SteemApi;

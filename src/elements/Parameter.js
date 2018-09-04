@@ -4,6 +4,20 @@ import ParameterCss from "./Parameter.css";
 import ArrayParameter from "./ArrayParameter.js";
 import ObjectParameter from "./ObjectParameter.js";
 import {getDesc} from "../utils/helpers";
+import { withStyles } from '@material-ui/core/styles';
+
+import TextField from '@material-ui/core/TextField';
+
+const styles = theme => ({
+    container: {
+      display: 'flex',
+      flexWrap: 'wrap',
+    },
+    textField: {
+      marginLeft: theme.spacing.unit,
+      marginRight: theme.spacing.unit,
+    },
+});
 
 class Parameter extends Component {
     
@@ -18,10 +32,10 @@ class Parameter extends Component {
         if(paramValues[name] && paramValues[name] != "") {
             return paramValues[name];
         }
-        return null;
+        return "";
     }
     
-    let param = this.props.param;
+    const { classes, param } = this.props;
 
     let input = null;
     console.log("Parameter " + param.name + " of type [" + param.type + "]");
@@ -33,20 +47,19 @@ class Parameter extends Component {
             input = <ObjectParameter paramValues = {paramValues} onChange={this.props.onChange} param = {param} getValue = {getValue}/>;
             break;
         default:
-            input = <input type="text" name={param.name} onChange={this.props.onChange} value = {getValue(param.name)}/>;
+            input = <TextField label={param.disp_name} 
+                                placeholder={param.default} 
+                                type="text" 
+                                name={param.name} 
+                                className={classes.textField}
+                                onChange={this.props.onChange} 
+                                value = {getValue(param.name)}/>;
     }
           
-    return (
-    <tr>
-        <td title={getDesc(param.desc)} className="Parameter-name">
-        {param.name}:&nbsp;
-        </td>
-        <td>
-            {input}
-        </td>
-    </tr>
+    return (<div>{input}</div>
+            
     );
   }
 }
 
-export default Parameter;
+export default withStyles(styles)(Parameter);

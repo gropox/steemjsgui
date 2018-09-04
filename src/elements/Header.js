@@ -1,11 +1,25 @@
 import React, { Component } from 'react';
 import SteemApi from "../steemjs/api";
-import HeaderCss from "./Header.css";
-import { getDesc, setLang, getLang } from "../utils/helpers";
+import "./Header.css";
 import 'react-flags-select/css/react-flags-select.css';
 import ReactFlagsSelect from "react-flags-select";
-import { Link } from 'react-router-dom';
-import { Box, VBox } from 'react-layout-components';
+import { withStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+
+const styles = {
+    root: {
+      flexGrow: 1,
+    },
+    menuButton: {
+      marginLeft: -18,
+      marginRight: 10,
+    },
+  };
+  
 
 class Header extends Component {
 
@@ -15,8 +29,6 @@ class Header extends Component {
         this.state = {
             blockchain: this.props.blockchain,
             ws: this.props.ws,
-            prefix: this.props.prefix,
-            chain_id: this.props.chain_id
         };
         this.onChange = this.onChange.bind(this);
         this.onSelectLang = this.onSelectLang.bind(this);
@@ -25,16 +37,6 @@ class Header extends Component {
 
     onSelectLang(countryCode) {
         this.props.onSelectLang(countryCode);
-    }
-
-    getBigLang() {
-        let lang = getLang();
-        switch (lang) {
-            case "en":
-                lang = "gb";
-                break;
-        }
-        return lang.toUpperCase();
     }
 
     onChange(event) {
@@ -57,85 +59,24 @@ class Header extends Component {
             this.props.onChange({
                 blockchain: this.state.blockchain,
                 ws: this.state.ws,
-                prefix: this.state.prefix,
-                chain_id: this.state.chain_id
             });
         }
     }
 
     render() {
-        console.log(this.props, this.state);
-
-        const languageSelector = <ReactFlagsSelect defaultCountry={this.getBigLang()}
-            countries={["GB", "RU", "DE", "ES"]}
-            showSelectedLabel={true}
-            customLabels={{ "GB": "en", "RU": "ru", "DE": "de", "ES": "es" }}
-            onSelect={this.onSelectLang}
-        />
+        console.log("props & stats", this.props, this.state);
+        const {classes} = this.props;
         console.log("state.blockchain", this.state.blockchain);
-        const bcSelectorOptions = Object.keys(SteemApi.Blockchain).map(value =>
-            <option value={SteemApi.Blockchain[value]} selected={SteemApi.Blockchain[value] == this.state.blockchain}>{SteemApi.Blockchain[value]}</option>
-        );
-
-        let hiddenParams = (this.state.blockchain != SteemApi.Blockchain.GOLOSTestnet) ?
-            <div>
-                <input type="hidden" value={this.state.ws} name="ws" />
-                <input type="hidden" value={this.state.prefix} name="prefix" />
-                <input type="hidden" value={this.state.chain_id} name="chain_id" />
-            </div> : null;
         return (
-            <VBox className="Header-body">
-                <VBox className="Header-selector">
-                    <VBox>
-                        <table>
-                            <tr>
-                                <td>Node</td>
-                                <td>
-                                    <select name="blockchain" onChange={this.onChange} >
-                                        {bcSelectorOptions}
-                                    </select>
-                                    {hiddenParams}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>WS</td><td><input type="text" name="ws" onChange={this.onChange}
-                                    value={this.state.ws}
-                                    size="25"
-                                    disabled={this.state.blockchain != SteemApi.Blockchain.GOLOSTestnet}
-                                />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Prefix</td><td><input type="text" name="prefix" onChange={this.onChange}
-                                    value={this.state.prefix}
-                                    size="4"
-                                    disabled={this.state.blockchain != SteemApi.Blockchain.GOLOSTestnet}
-                                />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>ChainId</td><td><input type="text" name="chain_id" onChange={this.onChange}
-                                    value={this.state.chain_id}
-                                    size="60"
-                                    disabled={this.state.blockchain != SteemApi.Blockchain.GOLOSTestnet}
-                                />
-                                </td>
-                            </tr>
-                        </table>
-
-                    </VBox>
-                </VBox>
-
-                <Box className="Header-title">Steem-js GUI</Box>
-                <Box className="Header-authors">Authors: <a href="https://golos.io/@ropox">@ropox</a>, <a href="https://golos.io/@asuleymanov">@asuleymanov</a>
-                </Box>
-                <Box>
-                    {languageSelector}
-                </Box>
-            </VBox >
-
+            <AppBar position="static">
+                <Toolbar variant="dense">
+                <Typography variant="title" color="inherit">
+                    {this.props.title}
+                </Typography>
+                </Toolbar>                
+            </AppBar>
         );
     }
 }
 
-export default Header;
+export default withStyles(styles)(Header);

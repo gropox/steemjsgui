@@ -4,6 +4,12 @@
     font-weight: bold;
 }
 
+.Parameter-default {
+    vertical-align: top;
+    text-align: right;
+    font-weight: 100;
+}
+
 .Parameter-error {
     color: #ff2233;
 }

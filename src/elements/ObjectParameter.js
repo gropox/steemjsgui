@@ -1,5 +1,16 @@
 import React, { Component } from 'react';
-
+import { withStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+const styles = theme => ({
+    container: {
+      display: 'flex',
+      flexWrap: 'wrap',
+    },
+    textField: {
+      marginLeft: theme.spacing.unit,
+      marginRight: theme.spacing.unit,
+    }
+});
 class ObjectParameter extends Component {
     
   constructor() {
@@ -14,11 +25,11 @@ class ObjectParameter extends Component {
     const name = target.name;      
     
     try {
+        this.props.onChange(event);
         JSON.parse(value);
         if(this.state.error) {
             this.setState({error : null});
         }
-        this.props.onChange(event);
     } catch(e) {
         this.setState({error : e.toString()});
     }
@@ -29,16 +40,24 @@ class ObjectParameter extends Component {
     let paramValues = this.props.paramValues;
     let getValue = this.props.getValue;
     
-    let param = this.props.param;
+    let {classes, param} = this.props;
     
     let error = null;
     if(this.state.error) {
         error = <div className={"Parameter-error"}>{this.state.error}</div>;
     }
     
-    return (<div><textarea name={param.name} rows={15} cols={60} onChange={this.onChange}>{getValue(param.name)}</textarea>
+    return (<div><TextField 
+                    multiline={true} 
+                    name={param.name} 
+                    placeholder={param.default}
+                    label={param.disp_name} 
+                    className={classes.textField}
+                    maxRows={5} 
+                    onChange={this.onChange} 
+                    value={getValue(param.name)}></TextField>
         {error}</div>);
   }
 }
 
-export default ObjectParameter;
+export default withStyles(styles)(ObjectParameter);
