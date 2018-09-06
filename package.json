@@ -4,10 +4,10 @@
   "private": true,
   "homepage": "/steemjs",
   "dependencies": {
-    "@material-ui/core": "^3.0.1",
-    "@material-ui/icons": "^3.0.1",
+    "bootstrap": "^3.3.7",
     "golos-js": "^0.7.3",
     "react": "^16.4.2",
+    "react-bootstrap": "^0.32.4",
     "react-dom": "^16.4.2",
     "react-flags-select": "^1.1.0",
     "react-json-pretty": "^1.6.3",

@@ -3,28 +3,13 @@ import SteemApi from "../steemjs/api";
 import ApiMethodParameters from "../elements/ApiMethodParameters";
 
 import JSONPretty from 'react-json-pretty';
-import ApiMethodCss from "./ApiMethod.css";
 import Header from "../elements/Header";
 import queryString from "query-string";
-//import { withRouter } from 'react-router';
-import { Link } from 'react-router-dom';
 import { getDesc, setLang, getLang } from "../utils/helpers";
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
-import { withStyles } from '@material-ui/core/styles';
 
-import Button from '@material-ui/core/Button';
+import {Button, Panel, Well, Group, Col, Row} from "react-bootstrap"
 
-const styles = theme => ({
-    root: {
-      ...theme.mixins.gutters(),
-      paddingTop: theme.spacing.unit * 2,
-      paddingBottom: theme.spacing.unit * 2,
-    },
-    execute: {
-        marginLeft: theme.spacing.unit
-    }
-});
+import "./ApiMethod.css"
 
 class ApiMethod extends Component {
 
@@ -51,6 +36,7 @@ class ApiMethod extends Component {
     applyParameters() {
         let urlParams = queryString.parse(this.props.location.search);
         this.state.gotParams = Object.keys(urlParams).length > 0;
+        console.log("assign", urlParams);
         Object.assign(this.state, urlParams);
         if (!this.state.ws ) {
             if (!Object.keys(SteemApi.Blockchain).includes(this.state.blockchain)) {
@@ -81,6 +67,7 @@ class ApiMethod extends Component {
         if (event) {
             //    event.preventDefault();
         }
+        console.log("set ws to", this.state.ws)
         SteemApi.setBlockchain(this.state.ws);
         
         let methodName = this.props.match.params.method_name;
@@ -147,6 +134,7 @@ class ApiMethod extends Component {
     }
 
     onBlockchainChange(values) {
+        console.log("onBlockchainChange", values)
         this.setState(values);
     }
 
@@ -178,7 +166,8 @@ class ApiMethod extends Component {
         return (
             <div className="ApiMethod">
                 <form onSubmit={this.onExecute}>
-
+                    <input type="hidden" name="blockchain" value={this.state.blockchain} />
+                    <input type="hidden" name="ws" value={this.state.ws} />
                     <Header 
                         title={apiName + " / " + methodName}
                         onChange={this.onBlockchainChange}
@@ -187,40 +176,43 @@ class ApiMethod extends Component {
                         ws={this.state.ws} />
 
                     <div className="ApiMethod-content">
-                        <div className="ApiMethod-links">
-                            <Link to={"/api"}>Back to API List</Link>
-                        </div>
-                        <Paper elevation={1} className={classes.root} >
-                            <Typography variant="headline" component="h3">
-                                {methodName}
-                            </Typography>
-                            <Typography component="p">
+                        <Panel bsStyle="primary">
+                            <Panel.Heading>
+                                <Panel.Title>
+                                    {methodName}
+                                </Panel.Title>
+                            </Panel.Heading>
+                            <Panel.Body>
 
                             {getDesc(this.steemapi.methods[apiName][methodName].desc)}
-                            </Typography>
-                        </Paper>
-                        <Paper elevation={1} className={classes.root} >
-                        <Typography variant="headline" component="h3">
+                            </Panel.Body>
+                        </Panel>
+                        <Panel bsStyle="primary">
+                        <Panel.Heading>
                             Parameters
-                        </Typography>
-                        <Typography component="div" >
-                            <ApiMethodParameters method={method} onChange={this.onChange} paramValues={this.state} />
-                            <Button style={{marginTop:"5px"}} className={classes.execute} type="submit" value="Execute" variant="raised" color="primary">Execute</Button>
-                        </Typography>
-                        </Paper>
+                        </Panel.Heading>
+                        <Panel.Body>
+                            <Row>
+                                <Col lg="4">
+                                    <ApiMethodParameters method={method} onChange={this.onChange} paramValues={this.state} />
+                                    <Button  bsStyle="primary" type="submit" value="Execute" variant="raised" color="primary">Execute</Button>
+                                </Col>
+                            </Row>
+                        </Panel.Body>
+                        </Panel>
                     </div>
                 </form>
-                <Paper elevation={1} className={classes.root} >
-                <Typography variant="headline" component="h3">
+                <Panel bsStyle="primary">
+                <Panel.Heading>
                     Result
-                </Typography>                
-                <Typography component="p">
+                </Panel.Heading>                
+                <Panel.Body>
                     {result}
-                </Typography>
-                </Paper>
+                </Panel.Body>
+                </Panel>
             </div>
         );
     }
 }
 
-export default withStyles(styles)(ApiMethod);
+export default ApiMethod;

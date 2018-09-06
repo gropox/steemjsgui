@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
+import {FormControl, FormGroup, ControlLabel, HelpBlock} from "react-bootstrap";
 const styles = theme => ({
     container: {
       display: 'flex',
@@ -47,17 +46,17 @@ class ObjectParameter extends Component {
         error = <div className={"Parameter-error"}>{this.state.error}</div>;
     }
     
-    return (<div><TextField 
-                    multiline={true} 
+    return (<FormGroup>
+            <ControlLabel>{param.disp_name}</ControlLabel>
+            <FormControl componentClass="textarea" 
                     name={param.name} 
                     placeholder={param.default}
-                    label={param.disp_name} 
-                    className={classes.textField}
                     maxRows={5} 
                     onChange={this.onChange} 
-                    value={getValue(param.name)}></TextField>
-        {error}</div>);
+                    value={getValue(param.name)}></FormControl>
+            {error && <HelpBlock>{error}</HelpBlock>}    
+        </FormGroup>);
   }
 }
 
-export default withStyles(styles)(ObjectParameter);
+export default ObjectParameter;

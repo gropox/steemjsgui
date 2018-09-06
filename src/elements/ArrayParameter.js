@@ -1,22 +1,7 @@
 import React, { Component } from 'react';
-import { withStyles } from '@material-ui/core/styles';
 
-import TextField from '@material-ui/core/TextField';
+import {FormControl, FormGroup, ControlLabel, HelpBlock} from "react-bootstrap";
 
-const styles = theme => ({
-    container: {
-      display: 'flex',
-      flexWrap: 'wrap',
-    },
-    textField: {
-      marginLeft: theme.spacing.unit,
-      marginRight: theme.spacing.unit,
-      width: 500
-    },
-    menu: {
-      width: 500,
-    },
-});
 
 class ArrayParameter extends Component {
     
@@ -32,17 +17,17 @@ class ArrayParameter extends Component {
     const { classes, param } = this.props;
 
     let inputs = [0,1,2].map((pIdx) =>
-                <div key={pIdx}>
-                    <TextField 
+                <FormGroup key={pIdx}>
+                    <ControlLabel>{param.name + " " + pIdx}</ControlLabel>
+                    <FormControl 
                         type="text" 
                         name={param.name + "_" + pIdx} 
-                        label={param.name + " " + pIdx}
                         onChange={this.props.onChange} 
                         className={classes.textField}
-                        value = {getValue(param.name + "_" + pIdx)}/></div>);
+                        value = {getValue(param.name + "_" + pIdx)}/></FormGroup>);
 
     return (<div>{inputs}</div>);
   }
 }
 
-export default withStyles(styles)(ArrayParameter);
+export default ArrayParameter;

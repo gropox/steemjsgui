@@ -3,22 +3,33 @@ import SteemApi from "../steemjs/api";
 import "./Header.css";
 import 'react-flags-select/css/react-flags-select.css';
 import ReactFlagsSelect from "react-flags-select";
-import { withStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 
-const styles = {
+import {PageHeader, Navbar, Nav, NavItem, NavDropdown, MenuItem, FormGroup, Glyphicon, FormControl} from "react-bootstrap";
+
+const styles = theme => ({
     root: {
       flexGrow: 1,
     },
-    menuButton: {
-      marginLeft: -18,
-      marginRight: 10,
+    flex: {
+      flexGrow: 1,
     },
-  };
+    menuButton: {
+        width: "150px",
+    },
+    ws_input: {
+        color: "#fff"
+    },
+    ws_root: {
+        color: "inherit"
+    },    
+    ws_focused: {
+
+    },
+    icon: {
+        color: "#fff"
+    },
+
+});
   
 
 class Header extends Component {
@@ -40,6 +51,7 @@ class Header extends Component {
     }
 
     onChange(event) {
+
         const target = event.target;
         const value = target.value;
         const name = target.name;
@@ -63,20 +75,61 @@ class Header extends Component {
         }
     }
 
+    onChangeBlockchain(blockchain) {
+        const ws = SteemApi.getDefaults(blockchain).ws;
+        this.setState({openBCSelector: null, blockchain, ws});
+        if (this.props.onChange) {
+            this.props.onChange({
+                blockchain, ws,
+            });
+        }        
+    }
+
+    onChangeWs(ws) {
+        console.log("ws", ws);
+        this.setState({ws});
+        if (this.props.onChange) {
+            this.props.onChange({
+                blockchain: this.state.blockchain,
+                ws: this.state.ws,
+            });
+        }        
+    }
+
     render() {
         console.log("props & stats", this.props, this.state);
         const {classes} = this.props;
         console.log("state.blockchain", this.state.blockchain);
         return (
-            <AppBar position="static">
-                <Toolbar variant="dense">
-                <Typography variant="title" color="inherit">
-                    {this.props.title}
-                </Typography>
-                </Toolbar>                
-            </AppBar>
+            <Navbar inverse>
+                <Navbar.Header>
+                    {this.state.blockchain && <Navbar.Brand>
+                        <a  href="../"><Glyphicon glyph="triangle-left"/></a>
+                    </Navbar.Brand>}
+
+                    <Navbar.Text>
+                        {this.props.title}
+                    </Navbar.Text>
+                    <Navbar.Toggle />
+                </Navbar.Header>
+  
+                {this.state.blockchain && <Navbar.Collapse>
+                    <Navbar.Form pullRight>
+                        <FormGroup>
+                        <FormControl onChange={(ev) => this.onChangeBlockchain(ev.target.value)} componentClass="select" placeholder={this.state.blockchain}>
+                            <option selected={SteemApi.Blockchain.GOLOS == this.state.blockchain} value={SteemApi.Blockchain.GOLOS}>{SteemApi.Blockchain.GOLOS}</option>
+                            <option selected={SteemApi.Blockchain.VIK == this.state.blockchain}value={SteemApi.Blockchain.VIK}>{SteemApi.Blockchain.VIK}</option>
+                            <option selected={SteemApi.Blockchain.GOLOSTestnet == this.state.blockchain}value={SteemApi.Blockchain.GOLOSTestnet}>{SteemApi.Blockchain.GOLOSTestnet}</option>
+                        </FormControl>  
+                        </FormGroup>{' '}
+                        <FormGroup>
+                            <FormControl value={this.state.ws}></FormControl>
+                        </FormGroup>
+                    </Navbar.Form>
+                </Navbar.Collapse>}
+            </Navbar>
         );
     }
 }
 
-export default withStyles(styles)(Header);
+export default Header;

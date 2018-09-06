@@ -4,20 +4,8 @@ import ParameterCss from "./Parameter.css";
 import ArrayParameter from "./ArrayParameter.js";
 import ObjectParameter from "./ObjectParameter.js";
 import {getDesc} from "../utils/helpers";
-import { withStyles } from '@material-ui/core/styles';
 
-import TextField from '@material-ui/core/TextField';
-
-const styles = theme => ({
-    container: {
-      display: 'flex',
-      flexWrap: 'wrap',
-    },
-    textField: {
-      marginLeft: theme.spacing.unit,
-      marginRight: theme.spacing.unit,
-    },
-});
+import {FormControl, FormGroup, ControlLabel, HelpBlock} from "react-bootstrap";
 
 class Parameter extends Component {
     
@@ -47,13 +35,15 @@ class Parameter extends Component {
             input = <ObjectParameter paramValues = {paramValues} onChange={this.props.onChange} param = {param} getValue = {getValue}/>;
             break;
         default:
-            input = <TextField label={param.disp_name} 
+            input = <FormGroup>
+                    <ControlLabel>{param.disp_name}</ControlLabel>
+                    <FormControl 
                                 placeholder={param.default} 
                                 type="text" 
                                 name={param.name} 
-                                className={classes.textField}
                                 onChange={this.props.onChange} 
-                                value = {getValue(param.name)}/>;
+                                value = {getValue(param.name)}/>
+                    </FormGroup>;
     }
           
     return (<div>{input}</div>
@@ -62,4 +52,4 @@ class Parameter extends Component {
   }
 }
 
-export default withStyles(styles)(Parameter);
+export default Parameter;
