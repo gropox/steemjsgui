@@ -23,7 +23,6 @@ class ArrayParameter extends Component {
                         type="text" 
                         name={param.name + "_" + pIdx} 
                         onChange={this.props.onChange} 
-                        className={classes.textField}
                         value = {getValue(param.name + "_" + pIdx)}/></FormGroup>);
 
     return (<div>{inputs}</div>);

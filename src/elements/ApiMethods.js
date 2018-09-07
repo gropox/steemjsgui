@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
+import {ListGroup, ListGroupItem} from "react-bootstrap";
 
 class ApiMethods extends Component {
     
@@ -21,13 +22,13 @@ class ApiMethods extends Component {
     });
     
     const methodItems = methods.map((methodName) =>
-        <li><Link to={this.getTarget(this.props.api, methodName)}>{methodName}</Link></li>
+        <ListGroupItem><Link to={this.getTarget(this.props.api, methodName)}>{methodName}</Link></ListGroupItem>
     );
     
     return (
-        <ul>
+        <ListGroup>
             {methodItems}
-        </ul>
+        </ListGroup>
     );
   }
 }
