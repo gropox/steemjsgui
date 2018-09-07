@@ -7,7 +7,7 @@ import Header from "../elements/Header";
 import queryString from "query-string";
 import { getDesc, setLang, getLang } from "../utils/helpers";
 
-import {Button, Panel, Well, Group, Col, Row} from "react-bootstrap"
+import {Button, Panel, Well, Grid, Col, Row} from "react-bootstrap"
 
 import "./ApiMethod.css"
 
@@ -164,7 +164,8 @@ class ApiMethod extends Component {
         let resultClass = this.state.error ? "ApiMethod-error" : "ApiMethod-result";
 
         return (
-            <div className="ApiMethod">
+            <Grid>
+                
                 <form onSubmit={this.onExecute}>
                     <input type="hidden" name="blockchain" value={this.state.blockchain} />
                     <input type="hidden" name="ws" value={this.state.ws} />
@@ -175,7 +176,8 @@ class ApiMethod extends Component {
                         blockchain={this.state.blockchain}
                         ws={this.state.ws} />
 
-                    <div className="ApiMethod-content">
+                        <Row>
+                            <Col lg="12">
                         <Panel bsStyle="primary">
                             <Panel.Heading>
                                 <Panel.Title>
@@ -187,20 +189,21 @@ class ApiMethod extends Component {
                             {getDesc(this.steemapi.methods[apiName][methodName].desc)}
                             </Panel.Body>
                         </Panel>
+                        </Col>
+                        </Row>
+                        <Row>
+                        <Col lg="12">
                         <Panel bsStyle="primary">
                         <Panel.Heading>
                             Parameters
                         </Panel.Heading>
                         <Panel.Body>
-                            <Row>
-                                <Col lg="4">
                                     <ApiMethodParameters method={method} onChange={this.onChange} paramValues={this.state} />
                                     <Button  bsStyle="primary" type="submit" value="Execute" variant="raised" color="primary">Execute</Button>
-                                </Col>
-                            </Row>
                         </Panel.Body>
                         </Panel>
-                    </div>
+                        </Col>
+                        </Row>
                 </form>
                 <Panel bsStyle="primary">
                 <Panel.Heading>
@@ -210,7 +213,7 @@ class ApiMethod extends Component {
                     {result}
                 </Panel.Body>
                 </Panel>
-            </div>
+            </Grid>
         );
     }
 }

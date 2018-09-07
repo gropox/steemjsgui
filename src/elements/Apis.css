@@ -9,3 +9,11 @@
     margin-bottom: -1px;
     background-color: #fff;
 }
+
+.method-selector:hover {
+    background-color: rgb(233, 233, 233);
+}
+
+.method-selector > a {
+    font-weight: 500;
+}

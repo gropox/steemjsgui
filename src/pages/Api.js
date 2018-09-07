@@ -5,6 +5,8 @@ import Header from "../elements/Header";
 import pck from "golos-js/package.json"
 import "./Api.css";
 
+import {Grid, Row, Col} from "react-bootstrap";
+
 class Api extends Component {
     
   constructor() {
@@ -17,14 +19,20 @@ class Api extends Component {
   render() {
     document.title = "Steem-JS API";
     return (
-    <div className="Api-body">
-        <Header title="API" {...this.props} />
-        <div className="Api-content">
+    <Grid>
+        <Row>
+            <Col lg="12">
+                <Header title="API" {...this.props} />
+            </Col>
+        </Row>
+        <Row>
+        <Col lg="12">
             <h2>Golos API {pck.version}</h2>
             <div className="Api-list"><Apis apis = {this.steemapi.methods}/></div>
             <div className="Api-help"></div>
-        </div>
-    </div>
+        </Col>
+        </Row>
+    </Grid>
     );  
   }
 }
