@@ -91,7 +91,7 @@ class Header extends Component {
         if (this.props.onChange) {
             this.props.onChange({
                 blockchain: this.state.blockchain,
-                ws: this.state.ws,
+                ws: ws,
             });
         }        
     }
@@ -123,7 +123,7 @@ class Header extends Component {
                         </FormControl>  
                         </FormGroup>{' '}
                         <FormGroup>
-                            <FormControl value={this.state.ws}></FormControl>
+                            <FormControl value={this.state.ws} onChange={(ev) => this.onChangeWs(ev.target.value)}></FormControl>
                         </FormGroup>
                     </Navbar.Form>
                 </Navbar.Collapse>}

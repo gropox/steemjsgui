@@ -62,16 +62,10 @@ class ApiMethod extends Component {
         this.setState({ lang: countryCode });
     }
 
-    onExecute(event) {
+    getParameterValues() {
 
-        if (event) {
-            //    event.preventDefault();
-        }
-        console.log("set ws to", this.state.ws)
-        SteemApi.setBlockchain(this.state.ws);
-        
-        let methodName = this.props.match.params.method_name;
         let apiName = this.props.match.params.api_name;
+        let methodName = this.props.match.params.method_name;
         let method = this.steemapi.methods[apiName][methodName];
         let params = [];
         if (method.params) {
@@ -107,6 +101,43 @@ class ApiMethod extends Component {
                 }
             }
         }
+        return params;
+    }
+
+    getApiCall() {
+        let methodName = this.props.match.params.method_name;
+        let apiName = this.props.match.params.api_name;
+        let method = this.steemapi.methods[apiName][methodName];
+        let params = this.getParameterValues();
+        
+/*
+    {id: 8, method: "call", jsonrpc: "2.0", params: ["database_api", "get_accounts", [["ropox"]]]}
+    id: 8
+    jsonrpc: "2.0"
+    method: "call"
+    params: ["database_api", "get_accounts", [["ropox"]]]
+*/
+
+        return JSON.stringify({id:1, method:"call", jsonrpc: "2.0", params: [
+            method.api,
+            method.name,
+            params
+        ]})
+    }
+
+    onExecute(event) {
+
+        if (event) {
+            //    event.preventDefault();
+        }
+        console.log("set ws to", this.state.ws)
+        SteemApi.setBlockchain(this.state.ws);
+        
+        let methodName = this.props.match.params.method_name;
+        let apiName = this.props.match.params.api_name;
+        let method = this.steemapi.methods[apiName][methodName];
+        let params = this.getParameterValues();
+
         console.log("execute api method", method, params)
         method.execute.apply(method, params).then(
             result => {
@@ -205,6 +236,16 @@ class ApiMethod extends Component {
                         </Col>
                         </Row>
                 </form>
+
+                <Panel bsStyle="primary">
+                <Panel.Heading>
+                    API запрос
+                </Panel.Heading>                
+                <Panel.Body>
+                    {this.getApiCall()}
+                </Panel.Body>
+                </Panel>
+
                 <Panel bsStyle="primary">
                 <Panel.Heading>
                     Result
