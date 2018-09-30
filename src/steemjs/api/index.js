@@ -1,9 +1,9 @@
-import steem from "golos-js"
-import methods from 'golos-js/lib/api/methods'
-import operations from 'golos-js/lib/broadcast/operations'
-import steemoperations from 'golos-js/lib/auth/serializer/src/operations'
-import typeDefs from 'golos-js/lib/auth/serializer/src/types'
-import { camelCase } from 'golos-js/lib/utils';
+import steem from "viz-world-js"
+import methods from 'viz-world-js/lib/api/methods'
+import operations from 'viz-world-js/lib/broadcast/operations'
+import steemoperations from 'viz-world-js/lib/auth/serializer/src/operations'
+import typeDefs from 'viz-world-js/lib/auth/serializer/src/types'
+import { camelCase } from 'viz-world-js/lib/utils';
 import types from "./types";
 import optypes from "./optypes";
 //console.log("steem_operations", steemoperations);
@@ -279,30 +279,16 @@ class SteemApi {
 
 
 SteemApi.Blockchain = {
-    GOLOS: "Golos.io",
-    VIK: "Vik",
-    GOLOSTestnet: "Golos Testnet",
-
+    VIZTestnet : "VIZ-Testnet"
 }
 
 SteemApi.getDefaults = (blockchain) => {
     console.log("get defaults for", blockchain);
     switch (blockchain) {
-        case SteemApi.Blockchain.GOLOS:
+        case SteemApi.Blockchain.VIZTestnet:
             return {
-                ws : "wss://ws.golos.io",
+                ws : "wss://testnet.viz.world",
             }    
-            break;    
-        case SteemApi.Blockchain.VIK:
-            return {
-                ws: "wss://api.golos.cf",
-            }    
-            break;    
-        case SteemApi.Blockchain.GOLOSTestnet:
-            return {
-                ws : "wss://ws.testnet.golos.io",
-            }    
-            break;    
     }
 
 }

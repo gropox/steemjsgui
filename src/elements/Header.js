@@ -4,7 +4,7 @@ import "./Header.css";
 import 'react-flags-select/css/react-flags-select.css';
 import ReactFlagsSelect from "react-flags-select";
 
-import {PageHeader, Navbar, Nav, NavItem, NavDropdown, MenuItem, FormGroup, Glyphicon, FormControl} from "react-bootstrap";
+import {Navbar, FormGroup, Glyphicon, FormControl} from "react-bootstrap";
 
 const styles = theme => ({
     root: {
@@ -91,39 +91,39 @@ class Header extends Component {
         if (this.props.onChange) {
             this.props.onChange({
                 blockchain: this.state.blockchain,
-                ws: this.state.ws,
+                ws: ws,
             });
         }        
     }
 
     render() {
         console.log("props & stats", this.props, this.state);
-        const {classes} = this.props;
         console.log("state.blockchain", this.state.blockchain);
+        const showmenu = !this.props.mainpage;
         return (
             <Navbar inverse>
                 <Navbar.Header>
-                    {this.state.blockchain && <Navbar.Brand>
+                    {showmenu && <Navbar.Brand>
                         <a  href="../"><Glyphicon glyph="triangle-left"/></a>
                     </Navbar.Brand>}
 
                     <Navbar.Text>
                         {this.props.title}
                     </Navbar.Text>
-                    <Navbar.Toggle />
+                    
+                    {showmenu && <Navbar.Toggle />}
+
                 </Navbar.Header>
   
-                {this.state.blockchain && <Navbar.Collapse>
+                {showmenu && <Navbar.Collapse>
                     <Navbar.Form pullRight style={{marginRight:"5px"}}>
                         <FormGroup>
                         <FormControl onChange={(ev) => this.onChangeBlockchain(ev.target.value)} componentClass="select" placeholder={this.state.blockchain}>
-                            <option selected={SteemApi.Blockchain.GOLOS == this.state.blockchain} value={SteemApi.Blockchain.GOLOS}>{SteemApi.Blockchain.GOLOS}</option>
-                            <option selected={SteemApi.Blockchain.VIK == this.state.blockchain}value={SteemApi.Blockchain.VIK}>{SteemApi.Blockchain.VIK}</option>
-                            <option selected={SteemApi.Blockchain.GOLOSTestnet == this.state.blockchain}value={SteemApi.Blockchain.GOLOSTestnet}>{SteemApi.Blockchain.GOLOSTestnet}</option>
+                            <option selected={SteemApi.Blockchain.VIZTestnet == this.state.blockchain}value={SteemApi.Blockchain.VIZTestnet}>{SteemApi.Blockchain.VIZTestnet}</option>
                         </FormControl>  
                         </FormGroup>{' '}
                         <FormGroup>
-                            <FormControl value={this.state.ws}></FormControl>
+                            <FormControl value={this.state.ws} onChange={(ev) => this.onChangeWs(ev.target.value)}></FormControl>
                         </FormGroup>
                     </Navbar.Form>
                 </Navbar.Collapse>}

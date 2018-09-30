@@ -2,7 +2,7 @@
   "name": "steemjsgui",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/steemjs",
+  "homepage": "/viz",
   "dependencies": {
     "bootstrap": "^3.3.7",
     "golos-js": "^0.7.3",
@@ -12,7 +12,8 @@
     "react-flags-select": "^1.1.0",
     "react-json-pretty": "^1.6.3",
     "react-layout-components": "^3.0.6",
-    "react-router-dom": "^4.1.2"
+    "react-router-dom": "^4.1.2",
+    "viz-world-js": "^0.9.4"
   },
   "devDependencies": {
     "react-scripts": "^1.1.5"
@@ -22,6 +23,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy": "scp -r build/* golosbot@ropox.tools:/var/www/html/steemjs/"
+    "deploy": "scp -r build/* golosbot@ropox.tools:/var/www/html/viz/"
   }
 }
