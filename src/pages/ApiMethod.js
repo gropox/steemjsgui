@@ -62,7 +62,7 @@ class ApiMethod extends Component {
         this.setState({ lang: countryCode });
     }
 
-    getParameterValues() {
+    getParameterValues(showErrors=false) {
 
         let apiName = this.props.match.params.api_name;
         let methodName = this.props.match.params.method_name;
@@ -84,20 +84,19 @@ class ApiMethod extends Component {
                     try {
                         if(value) {
                             value = JSON.parse(value);
-                            if (typeof value != "object") {
-                                this.setState({ result: { steemjsgui: "value is not an object!", parameter: pname } });
-                                return;
-                            }
+                            params.push(value);
                         } else {
                             value = null;
                         }
-                        params.push(value);
                     } catch (e) {
-                        this.setState({ result: { steemjsgui: e, parameter: pname } });
-                        return;
+                        value = null;
                     }
                 } else {
-                    params.push(this.state[pname]);
+                    if(this.state[pname]) {
+                        params.push(this.state[pname]);
+                    } else if(method.params[pname].default) {
+                        params.push(method.params[pname].default);
+                    }
                 }
             }
         }
