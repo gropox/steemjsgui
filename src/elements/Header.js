@@ -100,6 +100,11 @@ class Header extends Component {
         console.log("props & stats", this.props, this.state);
         console.log("state.blockchain", this.state.blockchain);
         const showmenu = !this.props.mainpage;
+
+        const WsOption = (props) => {
+            return (<option selected={props.wsopt == this.state.blockchain}value={props.wsopt}>{props.wsopt}</option>)
+        }
+    
         return (
             <Navbar inverse>
                 <Navbar.Header>
@@ -119,7 +124,9 @@ class Header extends Component {
                     <Navbar.Form pullRight style={{marginRight:"5px"}}>
                         <FormGroup>
                         <FormControl onChange={(ev) => this.onChangeBlockchain(ev.target.value)} componentClass="select" placeholder={this.state.blockchain}>
-                            <option selected={SteemApi.Blockchain.VIZTestnet == this.state.blockchain}value={SteemApi.Blockchain.VIZTestnet}>{SteemApi.Blockchain.VIZTestnet}</option>
+                            {Object.values(SteemApi.Blockchain).map(wsopt => 
+                                <WsOption wsopt={wsopt} />
+                            )}
                         </FormControl>  
                         </FormGroup>{' '}
                         <FormGroup>

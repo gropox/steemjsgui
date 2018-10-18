@@ -5,7 +5,7 @@ import ArrayParameter from "./ArrayParameter.js";
 import ObjectParameter from "./ObjectParameter.js";
 import {getDesc} from "../utils/helpers";
 
-import {FormControl, FormGroup, ControlLabel, HelpBlock} from "react-bootstrap";
+import {FormControl, FormGroup, ControlLabel, HelpBlock, InputGroup} from "react-bootstrap";
 
 class Parameter extends Component {
     
@@ -37,13 +37,16 @@ class Parameter extends Component {
         default:
             input = <FormGroup>
                     <ControlLabel>{param.disp_name}</ControlLabel>
+                    <InputGroup>
                     <FormControl 
                                 placeholder={param.default} 
                                 type="text" 
                                 name={param.name} 
                                 onChange={this.props.onChange} 
-                                value = {getValue(param.name)}/>
-                    </FormGroup>;
+                                value = {getValue(param.name)}/>                                
+                    </InputGroup>
+                    </FormGroup>
+                    ;
     }
           
     return (<div>{input}</div>

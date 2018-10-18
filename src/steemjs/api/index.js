@@ -279,7 +279,8 @@ class SteemApi {
 
 
 SteemApi.Blockchain = {
-    VIZTestnet : "VIZ-Testnet"
+    ropoxtools : "ROPOX.TOOLS",
+    VIZTestnet : "VIZ-Testnet",
 }
 
 SteemApi.getDefaults = (blockchain) => {
@@ -289,13 +290,17 @@ SteemApi.getDefaults = (blockchain) => {
             return {
                 ws : "wss://testnet.viz.world",
             }    
+        case SteemApi.Blockchain.ropoxtools:
+            return {
+                ws : "wss://ws.viz.ropox.tools",
+            }      
     }
 
 }
 
 
 SteemApi.setBlockchain = function (
-    ws = "wss://ws.golos.io",
+    ws = "wss://ws.viz.ropox.tools",
 ) {
     steem.api.stop();
     steem.config.set('websocket', ws);
