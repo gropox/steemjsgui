@@ -96,6 +96,8 @@ class ApiMethod extends Component {
                         params.push(this.state[pname]);
                     } else if(method.params[pname].default) {
                         params.push(method.params[pname].default);
+                    } else {
+                        params.push("");
                     }
                 }
             }

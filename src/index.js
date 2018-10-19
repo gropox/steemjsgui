@@ -6,11 +6,15 @@ import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 import { Route, BrowserRouter, Switch } from 'react-router-dom'
 
+import createBrowserHistory from "history/createBrowserHistory"
+
 import "bootstrap/dist/css/bootstrap.css"
 //import "bootstrap/dist/css/cerulean.css"
 
+const history = createBrowserHistory({basename: 'steemjs'});
+
 ReactDOM.render(
-  <BrowserRouter basename={'steemjs'}>
+  <BrowserRouter history={history} basename={'steemjs'}>
   <Switch>
       <Route exact path="/" component={(props) => <Api {...props} />} />
       <Route exact path="/api" component={(props) => <Api {...props} />}/>
