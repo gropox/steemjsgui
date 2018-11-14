@@ -1288,20 +1288,20 @@
             }
         }
     },
-    "account_by_key_api": {
+    "account_by_key": {
         "get_key_references": {
             "desc": {
-                "en": "",
-                "ru": "",
+                "en": "Finds account for public key",
+                "ru": "Возвращает аккаунт по публичному ключу",
                 "de": "",
                 "es": ""
             },
             "params": {
-                "key": {
-                    "type": "String",
+                "account_name_type": {
+                    "type": "Array",
                     "desc": {
-                        "en": "",
-                        "ru": "",
+                        "en": "public key",
+                        "ru": "Публичный ключ",
                         "de": "",
                         "es": ""
                     }
