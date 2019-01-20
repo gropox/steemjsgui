@@ -302,7 +302,10 @@ SteemApi.getDefaults = (blockchain) => {
 SteemApi.setBlockchain = function (
     ws = "wss://ws.viz.ropox.tools",
 ) {
-    steem.api.stop();
+    try {
+        steem.api.stop();
+    } catch(e) {
+    }
     steem.config.set('websocket', ws);
 
 }
