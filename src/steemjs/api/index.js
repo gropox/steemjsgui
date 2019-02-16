@@ -279,7 +279,7 @@ class SteemApi {
 
 
 SteemApi.Blockchain = {
-    ropoxtools : "ROPOX.TOOLS",
+    ropoxtools : "ROPOX.APP",
     VIZTestnet : "VIZ-Testnet",
 }
 
@@ -292,7 +292,7 @@ SteemApi.getDefaults = (blockchain) => {
             }    
         case SteemApi.Blockchain.ropoxtools:
             return {
-                ws : "wss://ws.viz.ropox.tools",
+                ws : "wss://ws.viz.ropox.app",
             }      
     }
 

@@ -23,5 +23,6 @@ ReactDOM.render(
   </BrowserRouter>,
   document.getElementById('root')
 )
+console.log("PUBLIC URL",process.env.PUBLIC_URL)
 
 registerServiceWorker();
