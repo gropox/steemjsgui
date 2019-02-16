@@ -14,7 +14,7 @@
     "react-json-pretty": "^1.6.3",
     "react-layout-components": "^3.0.6",
     "react-router-dom": "^4.1.2",
-    "viz-world-js": "^0.9.14"
+    "viz-world-js": "^0.9.16"
   },
   "devDependencies": {
     "react-scripts": "^1.1.5"
