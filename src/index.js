@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Api from './pages/Api';
 import Method from './pages/ApiMethod';
 import registerServiceWorker from './registerServiceWorker';
+import { unregister as unregisterServiceWorker } from './registerServiceWorker'
 import './index.css';
 import { Route, BrowserRouter, Switch } from 'react-router-dom'
 
@@ -24,4 +25,4 @@ ReactDOM.render(
   document.getElementById('root')
 )
 
-registerServiceWorker();
+unregisterServiceWorker();

@@ -5,8 +5,9 @@
   "homepage": "/steemjs",
   "dependencies": {
     "bootstrap": "^3.3.7",
-    "golos-js": "^0.7.3",
+    "golos-js": "^0.7.7",
     "history": "^4.7.2",
+    "query-string": "^6.2.0",
     "react": "^16.4.2",
     "react-bootstrap": "^0.32.4",
     "react-dom": "^16.4.2",
@@ -16,13 +17,20 @@
     "react-router-dom": "^4.1.2"
   },
   "devDependencies": {
-    "react-scripts": "^1.1.5"
+    "react-scripts": "^2.1.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy": "scp -r build/* golosbot@ropox.tools:/var/www/html/steemjs/"
-  }
+    "predeploy": "npm run build",
+    "deploy": "scp -r build/* ropox@ropox.app:/var/www/html/steemjs/"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
