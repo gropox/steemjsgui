@@ -117,9 +117,9 @@ class Header extends Component {
                     <Navbar.Form pullRight style={{marginRight:"5px"}}>
                         <FormGroup>
                         <FormControl onChange={(ev) => this.onChangeBlockchain(ev.target.value)} componentClass="select" placeholder={this.state.blockchain}>
-                            <option selected={SteemApi.Blockchain.GOLOS == this.state.blockchain} value={SteemApi.Blockchain.GOLOS}>{SteemApi.Blockchain.GOLOS}</option>
-                            <option selected={SteemApi.Blockchain.VIK == this.state.blockchain}value={SteemApi.Blockchain.VIK}>{SteemApi.Blockchain.VIK}</option>
-                            <option selected={SteemApi.Blockchain.GOLOSTestnet == this.state.blockchain}value={SteemApi.Blockchain.GOLOSTestnet}>{SteemApi.Blockchain.GOLOSTestnet}</option>
+                            <option selected={SteemApi.Blockchain.LEX == this.state.blockchain} value={SteemApi.Blockchain.LEX}>{SteemApi.Blockchain.LEX}</option>
+                            <option selected={SteemApi.Blockchain.SOLOX == this.state.blockchain}value={SteemApi.Blockchain.SOLOX}>{SteemApi.Blockchain.SOLOX}</option>
+                            <option selected={SteemApi.Blockchain.Blockchained == this.state.blockchain}value={SteemApi.Blockchain.Blockchained}>{SteemApi.Blockchain.Blockchained}</option>
                         </FormControl>  
                         </FormGroup>{' '}
                         <FormGroup>

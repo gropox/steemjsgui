@@ -279,28 +279,28 @@ class SteemApi {
 
 
 SteemApi.Blockchain = {
-    GOLOS: "Golos.io",
-    VIK: "Vik",
-    GOLOSTestnet: "Golos Testnet",
+    LEX: "Lex",
+    SOLOX: "Solox",
+    Blockchained: "Blockchained",
 
 }
 
 SteemApi.getDefaults = (blockchain) => {
     console.log("get defaults for", blockchain);
     switch (blockchain) {
-        case SteemApi.Blockchain.GOLOS:
+        case SteemApi.Blockchain.LEX:
             return {
-                ws : "wss://ws.golos.io",
+                ws : "wss://golos.lexa.host/ws",
             }    
             break;    
-        case SteemApi.Blockchain.VIK:
+        case SteemApi.Blockchain.SOLOX:
             return {
-                ws: "wss://api.golos.cf",
+                ws: "wss://golos.solox.world/ws",
             }    
             break;    
-        case SteemApi.Blockchain.GOLOSTestnet:
+        case SteemApi.Blockchain.Blockchained:
             return {
-                ws : "wss://ws.testnet.golos.io",
+                ws : "wss://api.golos.blckchnd.com/ws",
             }    
             break;    
     }
@@ -309,7 +309,7 @@ SteemApi.getDefaults = (blockchain) => {
 
 
 SteemApi.setBlockchain = function (
-    ws = "wss://ws.golos.io",
+    ws = "wss://golos.lexa.host/ws",
 ) {
     steem.api.stop();
     steem.config.set('websocket', ws);

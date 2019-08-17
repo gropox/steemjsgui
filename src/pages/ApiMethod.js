@@ -20,7 +20,7 @@ class ApiMethod extends Component {
             result: null,
             error: false,
             executing: false,
-            blockchain: SteemApi.Blockchain.GOLOS,
+            blockchain: SteemApi.Blockchain.LEX,
             ws: null,
             gotParams: false
         };
@@ -40,7 +40,7 @@ class ApiMethod extends Component {
         Object.assign(this.state, urlParams);
         if (!this.state.ws ) {
             if (!Object.keys(SteemApi.Blockchain).includes(this.state.blockchain)) {
-                this.state.blockchain = SteemApi.Blockchain.GOLOS;
+                this.state.blockchain = SteemApi.Blockchain.LEX;
             }
             const defaults = SteemApi.getDefaults(this.state.blockchain);
             Object.assign(this.state, defaults);
