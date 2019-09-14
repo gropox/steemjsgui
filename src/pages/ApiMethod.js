@@ -20,7 +20,7 @@ class ApiMethod extends Component {
             result: null,
             error: false,
             executing: false,
-            blockchain: SteemApi.Blockchain.ropoxtools,
+            blockchain: SteemApi.Blockchain.lex,
             ws: null,
             gotParams: false
         };
@@ -40,7 +40,7 @@ class ApiMethod extends Component {
         Object.assign(this.state, urlParams);
         if (!this.state.ws ) {
             if (!Object.keys(SteemApi.Blockchain).includes(this.state.blockchain)) {
-                this.state.blockchain = SteemApi.Blockchain.ropoxtools;
+                this.state.blockchain = SteemApi.Blockchain.lex;
             }
             const defaults = SteemApi.getDefaults(this.state.blockchain);
             Object.assign(this.state, defaults);
@@ -111,14 +111,6 @@ class ApiMethod extends Component {
         let apiName = this.props.match.params.api_name;
         let method = this.steemapi.methods[apiName][methodName];
         let params = this.getParameterValues();
-        
-/*
-    {id: 8, method: "call", jsonrpc: "2.0", params: ["database_api", "get_accounts", [["ropox"]]]}
-    id: 8
-    jsonrpc: "2.0"
-    method: "call"
-    params: ["database_api", "get_accounts", [["ropox"]]]
-*/
 
         return JSON.stringify({id:1, method:"call", jsonrpc: "2.0", params: [
             method.api,

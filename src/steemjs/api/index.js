@@ -279,28 +279,34 @@ class SteemApi {
 
 
 SteemApi.Blockchain = {
-    ropoxtools : "ROPOX.APP",
+    solox: "Solox's Node",
+    lex: "Lex's Node",
     VIZTestnet : "VIZ-Testnet",
+
 }
 
 SteemApi.getDefaults = (blockchain) => {
     console.log("get defaults for", blockchain);
     switch (blockchain) {
+        case SteemApi.Blockchain.solox:
+            return {
+                ws : "wss://solox.world/ws",
+            }                  
+        case SteemApi.Blockchain.lex:
+            return {
+                ws : "wss://viz.lexai.host",
+            }                  
         case SteemApi.Blockchain.VIZTestnet:
             return {
                 ws : "wss://testnet.viz.world",
-            }    
-        case SteemApi.Blockchain.ropoxtools:
-            return {
-                ws : "wss://ws.viz.ropox.app",
-            }      
+            }  
     }
 
 }
 
 
 SteemApi.setBlockchain = function (
-    ws = "wss://ws.viz.ropox.tools",
+    ws = "wss://viz.lexai.host",
 ) {
     try {
         steem.api.stop();
