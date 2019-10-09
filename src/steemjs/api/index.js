@@ -280,8 +280,7 @@ class SteemApi {
 
 SteemApi.Blockchain = {
     solox: "Solox's Node",
-    lex: "Lex's Node",
-    VIZTestnet : "VIZ-Testnet",
+    lex: "Lex's Node"
 
 }
 
@@ -294,19 +293,14 @@ SteemApi.getDefaults = (blockchain) => {
             }                  
         case SteemApi.Blockchain.lex:
             return {
-                ws : "wss://viz.lexai.host",
+                ws : "wss://viz.lexa.host/ws",
             }                  
-        case SteemApi.Blockchain.VIZTestnet:
-            return {
-                ws : "wss://testnet.viz.world",
-            }  
     }
-
 }
 
 
 SteemApi.setBlockchain = function (
-    ws = "wss://viz.lexai.host",
+    ws = "wss://viz.lexa.host/ws",
 ) {
     try {
         steem.api.stop();
