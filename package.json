@@ -28,11 +28,5 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "scp -r build/* ropox@ropox.app:/var/www/html/steemjs/"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  }
 }

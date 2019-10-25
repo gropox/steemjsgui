@@ -282,6 +282,7 @@ SteemApi.Blockchain = {
     LEX: "Lex",
     SOLOX: "Solox",
     Blockchained: "Blockchained",
+    DenisGolub: "Denis Golub"
 
 }
 
@@ -303,8 +304,13 @@ SteemApi.getDefaults = (blockchain) => {
                 ws : "wss://api.golos.blckchnd.com/ws",
             }    
             break;    
-    }
-
+        case SteemApi.Blockchain.DenisGolub:
+                return {
+                    ws : "wss://denisgolub.name/ws",
+                }    
+                break;    
+        }
+    
 }
 
 
