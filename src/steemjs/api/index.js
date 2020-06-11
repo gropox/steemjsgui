@@ -1,9 +1,9 @@
-import steem from "golos-js"
-import methods from 'golos-js/lib/api/methods'
-import operations from 'golos-js/lib/broadcast/operations'
-import steemoperations from 'golos-js/lib/auth/serializer/src/operations'
-import typeDefs from 'golos-js/lib/auth/serializer/src/types'
-import { camelCase } from 'golos-js/lib/utils';
+import steem from "golos-classic-js"
+import methods from 'golos-classic-js/lib/api/methods'
+import operations from 'golos-classic-js/lib/broadcast/operations'
+import steemoperations from 'golos-classic-js/lib/auth/serializer/src/operations'
+import typeDefs from 'golos-classic-js/lib/auth/serializer/src/types'
+import { camelCase } from 'golos-classic-js/lib/utils';
 import types from "./types";
 import optypes from "./optypes";
 //console.log("steem_operations", steemoperations);
@@ -280,23 +280,23 @@ class SteemApi {
 
 SteemApi.Blockchain = {
     LEX: "Lex",
-    SOLOX: "Solox",
+    Alex: "Alex",
     Blockchained: "Blockchained",
-    DenisGolub: "Denis Golub"
+    Testnet: "Testnet"
 
 }
 
-SteemApi.getDefaults = (blockchain) => {
+SteemApi.getDefaults = (blockchain = SteemApi.Blockchain.LEX) => {
     console.log("get defaults for", blockchain);
     switch (blockchain) {
         case SteemApi.Blockchain.LEX:
             return {
-                ws : "wss://golos.lexa.host/ws",
+                ws : "wss://golos.lexai.host/ws",
             }    
             break;    
-        case SteemApi.Blockchain.SOLOX:
+        case SteemApi.Blockchain.Alex:
             return {
-                ws: "wss://golos.solox.world/ws",
+                ws: "wss://api.aleksw.space/ws",
             }    
             break;    
         case SteemApi.Blockchain.Blockchained:
@@ -304,9 +304,9 @@ SteemApi.getDefaults = (blockchain) => {
                 ws : "wss://api.golos.blckchnd.com/ws",
             }    
             break;    
-        case SteemApi.Blockchain.DenisGolub:
+        case SteemApi.Blockchain.Testnet:
                 return {
-                    ws : "wss://denisgolub.name/ws",
+                    ws : "wss://testnet.golos.today/ws",
                 }    
                 break;    
         }

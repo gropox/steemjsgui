@@ -1,4 +1,8 @@
+
+
 import React from 'react';
+
+
 import ReactDOM from 'react-dom';
 import Api from './pages/Api';
 import Method from './pages/ApiMethod';
@@ -11,6 +15,13 @@ import createBrowserHistory from "history/createBrowserHistory"
 
 import "bootstrap/dist/css/bootstrap.css"
 //import "bootstrap/dist/css/cerulean.css"
+import golos from "golos-classic-js";
+
+import api from "./steemjs/api/index";
+console.log("init websocket");
+golos.config.set("websocket", api.getDefaults().ws);
+golos.api.start();
+
 
 const history = createBrowserHistory({basename: 'steemjs'});
 

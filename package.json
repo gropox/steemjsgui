@@ -5,7 +5,7 @@
   "homepage": "/steemjs",
   "dependencies": {
     "bootstrap": "^3.3.7",
-    "golos-js": "^0.7.7",
+    "golos-classic-js": "^0.7.42",
     "handlebars": "^4.1.2",
     "history": "^4.7.2",
     "lodash": "^4.17.15",
@@ -28,5 +28,11 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "scp -r build/* ropox@ropox.app:/var/www/html/steemjs/"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
