@@ -1,9 +1,9 @@
-import steem from "viz-world-js"
-import methods from 'viz-world-js/lib/api/methods'
-import operations from 'viz-world-js/lib/broadcast/operations'
-import steemoperations from 'viz-world-js/lib/auth/serializer/src/operations'
-import typeDefs from 'viz-world-js/lib/auth/serializer/src/types'
-import { camelCase } from 'viz-world-js/lib/utils';
+import steem from "viz-js-lib"
+import methods from 'viz-js-lib/lib/api/methods'
+import operations from 'viz-js-lib/lib/broadcast/operations'
+import steemoperations from 'viz-js-lib/lib/auth/serializer/src/operations'
+import typeDefs from 'viz-js-lib/lib/auth/serializer/src/types'
+import { camelCase } from 'viz-js-lib/lib/utils';
 import types from "./types";
 import optypes from "./optypes";
 //console.log("steem_operations", steemoperations);
@@ -280,7 +280,8 @@ class SteemApi {
 
 SteemApi.Blockchain = {
     solox: "Solox's Node",
-    lex: "Lex's Node"
+    lex: "Lex's Node",
+    testnet: "Testnet"
 
 }
 
@@ -293,9 +294,13 @@ SteemApi.getDefaults = (blockchain) => {
             }                  
         case SteemApi.Blockchain.lex:
             return {
-                ws : "wss://viz.lexa.host/ws",
+                ws : "wss://viz.lexai.host/ws",
             }                  
-    }
+        case SteemApi.Blockchain.testnet:
+            return {
+                ws : "wss://testnet.lexai.host/ws",
+            }                  
+        }
 }
 
 
