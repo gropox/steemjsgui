@@ -6,7 +6,7 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "golos-classic-js": "^0.7.42",
-    "handlebars": "^4.1.2",
+    "handlebars": "^4.5.3",
     "history": "^4.7.2",
     "lodash": "^4.17.15",
     "query-string": "^6.2.0",
